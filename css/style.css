@@ -1,0 +1,230 @@
+
+* { /*limpa todas as formatações padrão*/
+margin: 0;
+padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url('../img/2.png');  /*Foto de Kader D. Kahraman: https://www.pexels.com/pt-br/foto/celebracao-comemoracao-festa-creme-10295248/*/
+    background-repeat:repeat-x;
+    background-size: 1900px 1100px;
+    background-attachment: fixed;
+    padding: 30px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+
+.produtos {
+    background: #f4e3d7ff;
+    /*float: center;*/
+   
+    margin: 30px 30px;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
+
+h4 {
+    color: #9e8274;
+    letter-spacing: -1px;
+}
+
+#banner{
+    background: #f4e3d7ff;
+    float: center;
+        width: 1400px;
+    height: 500px;
+    position: relative;
+    margin: 200PX 100px auto;
+    padding: 10px 300px;
+
+    border-radius: 20px;
+    background-image: url('../img/banner.png');
+    background-position: right;
+    background-size: 400px;
+    background-repeat: no-repeat;
+
+
+    
+    
+}
+
+.clear {
+    clear: both;
+}
+
+/*
+#menu{
+
+    float: right;
+    margin: 100px 250PX;
+    position: fixed;
+
+}*/
+
+#area{
+    width: 720px;
+    margin: 50px auto;
+}
+
+#area-principal{
+    width: 1000px;
+    margin: 0px 50px 0px 50px;
+    height: 100px auto;
+}
+
+#rodape{
+    margin: 30px;
+    position: absolute;
+
+}
+
+
+
+a{
+    text-decoration: none; /*retira a decoração padrão dos links (sublinhado)*/
+    padding: 10px;
+}
+
+
+a:link{ /*cor do link*/
+    color: #492618;
+    text-decoration: none;
+}
+a:visited{ /*cor do link visitado*/
+    color: #785b45;
+    text-decoration: none;
+}
+a:hover{ /*cor ao passar o mouss*/
+    color: #bb805c;
+    text-decoration: none;
+}
+a:active{ /*cor ao clicar*/
+    color: #9e8274;
+    text-decoration: none;
+}
+
+
+
+#login{
+    position: fixed;
+    top: 30px;
+    right: 200px;
+    float: right;
+}
+
+#carrinho{
+    position: fixed;
+    top: 30px;
+    right: 100px;
+    float: right;
+}
+
+
+/*
+#logo{
+    background: red;
+   position: fixed;
+    top: 30px;
+    left: 100px;
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+
+
+#logo a {
+    background: url("../img/cupcake4.png");
+   position: fixed;
+    top: 30px;
+    left: 100px;
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+*/
+
+/*
+#search{
+    margin-left: 50%;
+    position: fixed;
+}*/
+
+#botao-pesquisa{
+    background: none;
+    border: none;
+}
+
+.campo-pesquisa{
+    border-radius: 30px;
+    background-color: transparent;
+    width: 280px;
+    height: 35px;
+    margin-right: 20px;
+    padding-left: 20px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #bb805c;
+    /*overflow: auto; width: 200px;*/
+     /*height: 100%; Full height */
+    /* position: fixed; /* Make it stick, even on scroll */
+    
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn{
+ display: inline-block;
+ color: #9e8274;
+ padding: 8px 16px;
+ text-decoration: none;
+
+}
+
+li a:hover, .dropdown:hover, .dropbtn {
+    background-color: #f7cadb;
+    color: white;
+  }
+
+  li.dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

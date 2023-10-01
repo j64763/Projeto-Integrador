@@ -1,73 +1,145 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Mania de Cupcake</title>
+	<html lang="pt-br">
+		<head>
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+			<title>Mania de Cupcake</title>
+			<link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE-edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" type="text/css" href="css/style.css"/> 
+			<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-	<style type="text/css">
-		#menu{
-			background: #F8DFDF;
-		}
-		#rodape{
-			border: 1px solid grey;
-		}
-	</style>
-</head>
-<body>
-	<div id="menu">
-	<img src="img/cupcake4.png" width="100" />
-	<h1 style="font-family:cursive;color: brown;">Mania de Cupcake</h1>
-	<hr />
+		</head>
+
+		<body>
+	
+	
+			<nav class="navbar navbar-fixed-top navbar-inverse">
+				<div class="container">
+			<div class="navbar-header">
+				
+				<button type="button" class="navbar-toggle collapsed">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand">Logo</a>
+			
+			</div>
+			
+			<div id="pesquisa">
+			<input type="search" class="campo-pesquisa" placeholder="Pesquise aqui"></input>
+			<button type="button" id="botao-pesquisa">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+					<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				  </svg>
+			</button>
+			</div>
+
+			<div id="menu">
+			<div >
+				<ul>
+					<li class="dropdown"><a href="todososprodutos.html" class="dropbtn">Todos os produtos</a>		
+					<div class="dropdown-content">
+					<a href="pagina-produtos.html">Cupcakes</a>
+					<!--<a href="pagina-produtos.html">Doces</a>
+					<a href="pagina-produtos.html">Massa</a>
+					<a href="pagina-produtos.html">Branca</a>
+					<a href="pagina-produtos.html">Chocolate</a>
+					<a href="pagina-produtos.html">Red Velvet</a>		
+					<a href="pagina-produtos.html">Cobertura</a>
+					<a href="pagina-produtos.html">Morango</a>
+					<a href="pagina-produtos.html">Chocolate</a>
+					<a href="pagina-produtos.html">Baunilha</a>
+					<a href="pagina-produtos.html">Zero Açucar</a>
+					<a href="pagina-produtos.html">Doces Típicos</a>
+					<a href="pagina-produtos.html">Salgados</a>
+					<a href="pagina-produtos.html">Gourmet</a>
+					<a href="pagina-produtos.html">Veganos</a> -->
+					<a href="pagina-produtos.html">Doces</a>
+					<a href="pagina-produtos.html">Acessórios</a>
+					<a href="pagina-produtos.html">Kits prontos</a>
+					</div>
+					</li>
+					<li><a href="promocoes.html">Promoções</a></li>
+					<li><a href="lançamentos.html">Lançamentos</a></li>
+					<li><a href="quemsomos.html">Sobre Nós</a></li>
+				</ul>
+		</div>
+	</div>
+
+		<div id="login">
+		<a href="login.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+				<path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+			</svg>
+		</a>
+		</div>
+
+		<div id="carrinho">
+		<a href="carrinho.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+				<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+			</svg> 
+		</a>
+		</div>
+	</div>
+	</nav>
+
+
+
+
+	<div id="area-principal">
+   <!--conteudo principal-->
+   	
+		<div id="banner">
+		banner
+		</div>
 	
 
-	<ul><li>Todos os produtos</li>
-		<li>Categorias</li>
-		<ul>
-			<li>Cupcakes
-				<ul>
-					<li>Doces
-						<ul>
-							<li>Doces Típicos</li>
-							<li>Massa
-								<ul>
-									<li>Branca</li>
-									<li>Chocolate</li>
-									<li>Red Velvet</li>
-								</ul>
-							</li>
-							<li>Cobertura</li>
-							<li>Zero Açucar</li>
-						</ul>
-					</li>
-					<li>Salgados</li>
-					<li>Gourmet</li>
-					<li>Veganos</li>
-				</ul>
-			</li>
-			<li>Doces</li>
-			<li>Acessórios</li>
-			<li>Kits prontos</li>
-		</ul>
-		<li><a href="promocoes.html">Promoções</a></li>
-		<li>Lançamentos</li>
-		<li>Quem Somos</li>
-		<li><a href="login.html">Login</a></li>
-	</ul>
+	<div>
+		<h4>MASSAS BRANCAS</h4>
+		<div class="produtos">produto1</div>
+		<h4>CHOCOLATE</h4>
+		<div class="produtos">produto2</div>
+		<h4>DATAS COMEMORATIVAS</h4>
+		<div class="produtos">produto2</div>
+		<h4>ZERO AÇÚCAR</h4>
+		<div class="produtos">produto3</div>
+		<h4>SALGADOS</h4>
+		<div class="produtos">produto3</div>
+		<h4>DOCES TIPICOS</h4>
+		<div class="produtos">produto3</div>
+		<h4>SIMPLES</h4>
+		<div class="produtos">produto3</div>
+		<div class="produtos"><h5>ÚLTIMOS DIAS PARA COMPRAR</h5></div>
+		<div class="produtos"><h5>MAIS COMPRADOS</h5></div>
+		<div class="produtos"><h5>KITS</h5></div>
+	</div>	
 </div>
 
 
-	<div>
-		banner
-	</div>
+	<div class="container">
 
-	<div>
-		produtos
-	</div>
 
-	<div id="rodape">
-		rodape
 	</div>
+	
+	<footer>
+	<!--<div class="clear" id="rodape">
+		<p>rodape</p>
+	</div>-->
+	</footer>
 
+
+	
+	<!--<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>-->
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
