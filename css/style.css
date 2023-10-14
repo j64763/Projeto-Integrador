@@ -4,15 +4,15 @@ margin: 0;
 padding: 0;
 }
 
-html, body {
+/*html, body {
     height: 100%;
-}
+}*/
 
 body {
-    background: url('../img/2.png');  /*Foto de Kader D. Kahraman: https://www.pexels.com/pt-br/foto/celebracao-comemoracao-festa-creme-10295248/*/
+    /*background: url('../img/2.png');  Foto de Kader D. Kahraman: https://www.pexels.com/pt-br/foto/celebracao-comemoracao-festa-creme-10295248/
     background-repeat:repeat-x;
     background-size: 1900px 1100px;
-    background-attachment: fixed;
+    background-attachment: fixed;*/
     padding: 30px;
     font-size: 16px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -22,8 +22,8 @@ body {
 
 .produtos {
     background: #f4e3d7ff;
-    /*float: center;*/
-   
+    float: right;
+    position: relative;
     margin: 30px 30px;
     padding: 10px;
     width: 300px;
@@ -41,11 +41,11 @@ h4 {
 #banner{
     background: #f4e3d7ff;
     float: center;
-        width: 1400px;
+    width: 80%;
     height: 500px;
     position: relative;
-    margin: 200PX 100px auto;
-    padding: 10px 300px;
+    margin: 200PX;
+    /*padding: 10px 300px;*/
 
     border-radius: 20px;
     background-image: url('../img/banner.png');
@@ -70,7 +70,7 @@ h4 {
     position: fixed;
 
 }*/
-
+/*
 #area{
     width: 720px;
     margin: 50px auto;
@@ -86,7 +86,7 @@ h4 {
     margin: 30px;
     position: absolute;
 
-}
+}*/
 
 
 
@@ -115,20 +115,26 @@ a:active{ /*cor ao clicar*/
 
 
 
-#login{
-    position: fixed;
+.login{
+    position: absolute;
     top: 30px;
-    right: 200px;
+    right: 130px;
     float: right;
 }
 
-#carrinho{
-    position: fixed;
-    top: 30px;
-    right: 100px;
-    float: right;
+.login a:hover{
+    color:white;
 }
 
+.carrinho{
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    float: right;
+}
+.carrinho a:hover{
+    color:white;
+}
 
 /*
 #logo{
