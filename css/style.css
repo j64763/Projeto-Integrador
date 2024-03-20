@@ -8,42 +8,66 @@ padding: 0;
     height: 100%;
 }*/
 
+html{
+    background-color: #f1cbd8;
+}
+
+
+
 body {
-    /*background: url('../img/2.png');  Foto de Kader D. Kahraman: https://www.pexels.com/pt-br/foto/celebracao-comemoracao-festa-creme-10295248/
+    
+    background: url('../img/2.png'); /* Foto de Kader D. Kahraman: https://www.pexels.com/pt-br/foto/celebracao-comemoracao-festa-creme-10295248/*/
     background-repeat:repeat-x;
     background-size: 1900px 1100px;
-    background-attachment: fixed;*/
+    background-attachment: fixed;
     padding: 30px;
     font-size: 16px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
+.faixa-produtos{
+    margin: auto;
+
+
+}
 
 .produtos {
     background: #f4e3d7ff;
-    float: right;
-    position: relative;
+   /* float: right;
+    position: relative; */
     margin: 30px 30px;
     padding: 10px;
-    width: 300px;
+    max-width: 300px;
     height: 300px;
     border-radius: 20px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
 }
 
-h4 {
-    color: #9e8274;
+.titulo-produtos{
+    background: transparent;
+    margin: 30px 100px;
+    padding: 10px 10px 10px 10px;
+    width: 400px;
+    height: 400px;
+    /*border: #492618 solid;*/
+    text-align: center;
+
+}
+
+.titulo-produtos h4 {
+    color: #492618;
     letter-spacing: -1px;
+    
 }
 
 #banner{
     background: #f4e3d7ff;
-    float: center;
-    width: 80%;
+    /*float: center;*/
+    max-width: 80%;
     height: 500px;
-    position: relative;
+    /*position: relative;*/
     margin: 200PX;
     /*padding: 10px 300px;*/
 
@@ -234,3 +258,7 @@ li a:hover, .dropdown:hover, .dropbtn {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
