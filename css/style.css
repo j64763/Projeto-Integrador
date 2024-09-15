@@ -22,14 +22,18 @@ body {
     background-attachment: fixed;
     padding: 30px;
     font-size: 16px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Afacad';
 
 }
 
 .faixa-produtos{
     margin: auto;
+    display: inline-block;
 
+}
 
+.faixa-produtos li {
+list-style: none;
 }
 
 .produtos {
@@ -43,7 +47,19 @@ body {
     border-radius: 20px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
+     display: inline-block;
 }
+
+.produtos img {
+    width: 200px;
+    height: 200px;
+
+}
+
+.produtos li {
+    list-style: none;
+    }
+    
 
 .titulo-produtos{
     background: transparent;
@@ -56,11 +72,12 @@ body {
 
 }
 
+/*
 .titulo-produtos h4 {
     color: #492618;
     letter-spacing: -1px;
     
-}
+}*/
 
 #banner{
     background: #f4e3d7ff;
@@ -204,7 +221,7 @@ a:active{ /*cor ao clicar*/
     padding-left: 20px;
 }
 
-ul{
+#menu-navegaçao{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -262,3 +279,37 @@ li a:hover, .dropdown:hover, .dropbtn {
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
+
+footer {
+    clear: both;
+    background-color: antiquewhite;
+    padding: 50px;
+    margin-top: 100px;
+    border-radius: 30px;
+
+
+
+}
+footer .container {
+    position: relative;
+}
+.social {
+    position: absolute;
+    list-style-type: none;
+    top: 12px;
+    right: 0;
+}
+.social svg{
+    width: 20px;
+    fill: #492618;
+}
+
+
+#banner {
+    border-radius: 30px;
+}
+
+img {
+    border-radius: 100px;
+    outline: 3px solid#f9f9f9;
+}

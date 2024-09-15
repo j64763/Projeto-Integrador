@@ -1,0 +1,63 @@
+body {
+    background-color: rgba(240, 201, 213, 0.6);
+    font-family: 'Afacad';
+    color: #492618;
+}
+
+#figura1{
+    text-align: right;
+    float: left;
+}
+#figura2{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+figcaption {
+    font-style: italic;
+}
+
+.imagem{
+   
+    border-radius: 20px;
+    /*border: 8px solid #492618;*/
+    outline: 8px solid rgb(250, 180, 201);
+    
+}
+
+p {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px auto 50px auto;
+
+}
+h2, h3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#endereço1 {
+    text-align: center;
+    width: 300px;
+    display: inline-block;
+    margin-left: 20%;
+}
+
+#endereço2 {
+    text-align: center;
+    width: 300px;
+    float: right;
+    margin-right: 20%;
+}
+
+#historia {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}

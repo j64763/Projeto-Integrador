@@ -1,0 +1,177 @@
+
+
+
+* { /*limpa todas as formatações padrão*/
+    margin: 0;
+    padding: 0;
+
+    }
+
+    body {
+
+        font-family: 'Varela Round', sans-serif;
+        color: #492618;
+    }
+    
+    a{
+        text-decoration: none; /*retira a decoração padrão dos links (sublinhado)*/
+    
+    }
+
+
+    
+    a:link{ /*cor do link*/
+        color: #492618;
+    }
+    a:visited{ /*cor do link visitado*/
+        color: #785b45;
+    }
+    a:hover{ /*cor ao passar o mouss*/
+        color: #bb805c;
+    }
+    a:active{ /*cor ao clicar*/
+        color: #9e8274;
+    }
+    
+    
+    .clear {
+        clear: both;
+    }
+    
+    .logo{
+        
+        float: left;
+        left: 10%;
+        position: absolute;
+        
+        
+        
+    }
+
+    .imagem-produto {
+        position: absolute;
+        width: 30%;
+        margin-top: 20px;
+    }
+    .detalhes-produto {
+        position: relative;
+        float: right;
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .detalhes-produto h3 {
+        margin-bottom: 30px;
+    }
+
+
+    .total {
+        clear: both;
+        position: relative;
+        float: right;
+        width: 30%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+
+    .detalhes-pedido {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.8em;
+        height: auto;
+        width: 96%;
+        margin: 0 auto;
+
+    }
+
+
+    .finalizar {
+        clear: both;
+        text-align: center;
+    }
+
+    .finalizar button {
+        margin-left: 30px;
+    }
+
+    .topo{
+        margin: 0%;
+        background: linear-gradient(to right, #f2d0da, #f2d0da81 ) ;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        position: relative;
+    }
+
+    .topo h1 {
+        margin-bottom: 30px;
+        font-size: 1.5em;
+    }
+
+    button {
+        border-radius: 20px;    
+        border: none;
+        padding: 10px;
+        background-color: #492618;
+        color: white;
+    }
+
+    #quantidade {
+        border:none;
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #remover-item {
+        margin-left: 70%;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+    
+    @media (max-width: 600px) {
+        .logo {
+            display: none;
+        }
+        .topo h1 {
+            margin-bottom: 30px;
+            font-size: 1em;
+        }
+    .imagem-produto
+    {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    .detalhes-produto
+    {   clear: both;
+        position: static;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .total
+    {   position: static;
+        clear: both;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+
+    }
+    #remover-item {
+        margin-left: 50%;
+        margin-right: auto;
+
+        margin-top: 10px;
+    }    
+    .detalhes-produto p {
+        margin-bottom: 10px;
+    }
+}
+

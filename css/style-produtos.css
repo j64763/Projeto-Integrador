@@ -1,0 +1,76 @@
+button {
+    border-radius: 25px;
+    padding: 10px;
+    height: auto;
+    width: 20%;
+    border: none;
+    background-color: #492618;
+    color: white;
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.lista-produtos h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size:13px ;
+}
+
+
+.lista-produtos li {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #f4e3d7ff;
+    margin: 3%;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 20px;
+    height: 350px;
+    width: 25%;
+
+    
+}
+
+.lista-produtos li:hover {
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.336);
+/*box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.404);*/
+transition: box-shadow 0.5s;
+transform: scale(1.05);
+}
+
+.lista-produtos figcaption {
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+
+}
+
+.lista-produtos a {
+    text-decoration: none;
+    color: #492618;
+
+}
+
+.lista-produtos a:hover {
+    text-decoration: none;
+    color: #f1a9c2;
+}
+
+
+@media (max-width: 600px) {
+    button {
+    display: none;
+}
+.lista-produtos li {
+    margin-top: 10%;
+    margin-left: 10%;
+    width: auto;
+}
+
+}
