@@ -1,5 +1,13 @@
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type="number"] {
+    -moz-appearance: textfield; /* Faz o campo de número parecer um campo de texto */
+}
 .imagem
 {
     position: absolute;

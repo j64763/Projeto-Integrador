@@ -30,11 +30,24 @@
 			<meta http-equiv="X-UA-Compatible" content="IE-edge">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
       		<link rel="stylesheet" href="css/reset.css">
-			  <link rel="stylesheet" href="css/menu.css">
+			<link rel="stylesheet" href="css/menu.css">
 			<link rel="stylesheet" href="css/style-produtos.css">
+			<script src="js/jquery.js"></script>
       		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+			<script>
+			$(document).ready(function(){
+				$("add_carrinho").click(function(){
+				$("#sacola .material-icons").css("color","white").toggle()
+				});
+			
+			
+			
+			
+			});
 
+
+			</script>
 
 		
 		</head>
@@ -51,9 +64,10 @@
 	$conexao = mysqli_connect("127.0.0.1", "site", "etis", "MANIADECUPCAKE");
 	$dados = mysqli_query($conexao, "SELECT * FROM produto");
 	while ($produto = mysqli_fetch_array($dados)):
+
 	?>
-	<li>
-	<a href="produto.php?id=<?= $produto['ID_PRODUTO'] ?>">
+	<li class="produtos">
+	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>" class="id_produto">
 	<figure>
 	<img src="produtos/<?= $produto['ID_PRODUTO'] ?>.png"
 	alt="<?= $produto['NOME_PRODUTO'] ?>">
@@ -61,11 +75,11 @@
 	</figure>
 	</a>
 	<p><?= $produto['PRECO_PRODUTO']?></p>
-	<button name="add_carrinho" id="add_carrinho">+</button>
+	<button name="add_carrinho" class="add_carrinho">+</button>
 	</li>
 	<?php endwhile; ?>
 	</ul>	
-			
+	
 	<!--		
 			<ul>
 				<li>

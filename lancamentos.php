@@ -32,7 +32,7 @@
 	while ($produto = mysqli_fetch_array($dados)):
 	?>
 	<li>
-	<a href="produto.php?id=<?= $produto['ID_PRODUTO'] ?>">
+	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>">
 	<figure>
 	<img src="produtos/<?= $produto['ID_PRODUTO'] ?>.png"
 	alt="<?= $produto['NOME_PRODUTO'] ?>">
