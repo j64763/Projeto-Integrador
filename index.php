@@ -23,14 +23,13 @@
             <a href="#"><img src="img/banner4.jpg" class="container" id="banner"></a>
             <button id="mudar-banner" onclick="mudar()"><i class="material-icons">chevron_right</i></button>
             </section>
-  
-  
+
             <div class="container paineis">
               <section class="painel categorias">
                 <h2>Categorias</h2>
                 <ol>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?id=1" alt="categoria2">
                       <figure>
                         <figcaption>massa branca</figcaption>
                         <img src="img/massa-branca-painel1.png" alt="imagem-cupcake-massa-branca">
@@ -38,7 +37,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?id=2" alt="categoria2">
                       <figure>
                         <figcaption>chocolate</figcaption>
                         <img src="img/chocolate-painel1.png" alt="imagem-cupcake-chocolate">
@@ -46,7 +45,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria1">
+                    <a href="categorias.php?id=3" alt="categoria1">
                       <figure>
                         <figcaption>Datas comemorativas</figcaption>
                         <img src="img/datas-comemorativas-painel1.png" alt="imagem-datas-comemorativas">
@@ -54,7 +53,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?id=4" alt="categoria2">
                       <figure>
                         <figcaption>zero açúcar</figcaption>
                         <img src="img/zero-painel1.jpg" alt="imagem-cupcake-zero">
@@ -62,7 +61,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?id=5" alt="categoria2">
                       <figure>
                         <figcaption>salgados</figcaption>
                         <img src="img/salgado-painel1.jpg" alt="imagem-cupcake-salgado">
@@ -70,7 +69,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?id=6" alt="categoria2">
                       <figure>
                         <figcaption>doces típicos</figcaption>
                         <img src="img/doce-tipico-painel1.png" alt="imagem-cupcake-doce-tipico">
@@ -78,7 +77,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?id=7" alt="categoria2">
                       <figure>
                         <figcaption>simples</figcaption>
                         <img src="img/massa-simples-painel1.jpg" alt="imagem-cupcake-massa-simples">
@@ -93,7 +92,7 @@
                 <h2>Veja Também</h2>
                 <ol>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?" alt="categoria2">
                       <figure>
                         <figcaption>Últimos dias</figcaption>
                         <img src="img/ultimos-dias2-painel2.jpg" alt="imagem-cupcake-chocolate">
@@ -101,7 +100,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?" alt="categoria2">
                       <figure>
                         <figcaption>Mais comprados</figcaption>
                         <img src="img/mais-comprados-painel2.png" alt="imagem-mais-comprados">
@@ -109,7 +108,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="pagina-produtos.html" alt="categoria2">
+                    <a href="categorias.php?id=1" alt="categoria2">
                       <figure>
                         <figcaption>Kits</figcaption>
                         <img src="img/kit-painel2.jpg" alt="imagem-kits">
@@ -121,7 +120,7 @@
               </section>
 
             </div>
-            
+
             <?php include("rodape.php") ?>
 
             <!--Javascript-->
