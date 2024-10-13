@@ -1,3 +1,7 @@
+
+<html>
+
+<body>
 <?php
 
 require_once('conexao.php');
@@ -24,3 +28,7 @@ if($resultado) {
 
 
 ?>
+
+</html>
+
+</body>

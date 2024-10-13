@@ -1,5 +1,5 @@
 <footer>
-              <a href="menu.html"><img src="img/logo-rodape.png" id="logo-rodape"/></a>
+              <a href="index.php"><img src="img/logo-rodape.png" id="logo-rodape"/></a>
               <div>
                 
                 <ul class="links">
@@ -7,13 +7,13 @@
                     <a href="#" target="_blank">Institucional</a>
                   </li>
                   <li>
-                    <a href="historia.html" target="_blank">quem somos</a>
+                    <a href="historia.php" target="_blank">quem somos</a>
                   </li>
                   <li>
                     <a href="#" target="_blank">política de privacidade</a>
                   </li>
                   <li>
-                    <a href="historia.html#endereços" target="_blank">nossas lojas</a>
+                    <a href="historia.php#endereços" target="_blank">nossas lojas</a>
                   </li>
                 </ul>
                 

@@ -2,9 +2,16 @@
 <body>
 <?php
 
-echo $_GET['email'];
-echo $_GET['cep'];
+$cep =  $_GET['cep'];
 
+
+
+if (!strncasecmp($cep, "0",1)) {
+    echo "Atende";
+}
+else {
+    echo "Que pena. Infelizmente não atendemos para o seu endereço =/";
+}
 
 ?>
 </body>

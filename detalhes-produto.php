@@ -21,7 +21,7 @@
 			<script>
 			$(document).ready(function() {
 				$('#comprar').click(function() {
-					<p>produto clicado</p>
+					
 				})
 			});
 			</script>

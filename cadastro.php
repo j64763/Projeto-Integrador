@@ -37,7 +37,7 @@
 				<label for="cpf">CPF</label> <br>
 				<input type="text" name="cpf"  id="cpf" required> <br>
 				</fieldset>
-				
+
 				<!--class="alinhamento" id="esquerda" id="alinhamento-cadastro"-->
 				<fieldset class="w3-container w3-left col-md-6" </fieldset>
 				<label for="cep">CEP</label> <br>
@@ -89,7 +89,7 @@
 					<input type="checkbox"  class="checkbox" name="contrato" required>
 					<label for="contrato">Concordo com os termos de uso e a política de privacidade</label>
 					<br/><br/>
-					<input type="button" value="voltar" name="voltar" class="botoes"></input>
+					<input type="button" value="voltar" name="voltar" class="botoes" id="voltar"></input>
 					<input type="submit" value="Cadastrar" class="botoes"></input><br/><br/>
 				</div>
 
@@ -98,6 +98,6 @@
 		</div>
 
 
-
+		<script src="js/script.js"></script>
 </body>
 </html>

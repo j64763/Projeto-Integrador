@@ -66,7 +66,7 @@
 	<li>
 	<a href="detalhes-produto.php?id=<?= $row['ID_PRODUTO'] ?>" class="classe_produto">
 	<figure>
-	<img src="produtos/<?= $row['ID_PRODUTO'] ?>.png"
+	<img class="imagem-produtos" src="produtos/<?= $row['ID_PRODUTO'] ?>.png"
 	alt="<?= $row['NOME_PRODUTO'] ?>">
 	<figcaption><?= $row['NOME_PRODUTO'] ?></figcaption>
 	</figure>

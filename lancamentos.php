@@ -34,7 +34,7 @@
 	<li class="produtos">
 	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>" class="classe_produto">
 	<figure>
-	<img src="produtos/<?= $produto['ID_PRODUTO'] ?>.png"
+	<img class="imagem-produtos" src="produtos/<?= $produto['ID_PRODUTO'] ?>.png"
 	alt="<?= $produto['NOME_PRODUTO'] ?>">
 	<figcaption><?= $produto['NOME_PRODUTO'] ?></figcaption>
 	</figure>

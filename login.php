@@ -36,11 +36,11 @@
 
 
 		<input type="submit" value="Login" name="entrar" class="botoes"></input>
-		<input type="button" value="voltar" name="voltar" class="botoes"></input><br/><br/>
+		<input type="button" value="voltar" name="voltar" class="botoes" id="voltar"></input><br/><br/>
 		Não possui conta?<a href="disponibilidade.php"> Cadastrar</a><br/><br/>
 		
 	</form>
 </div>
-
+<script src="js/script.js"></script>
 </body>
 </html>
