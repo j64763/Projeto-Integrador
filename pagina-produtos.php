@@ -66,17 +66,19 @@
 	while ($produto = mysqli_fetch_array($dados)):
 
 	?>
+	
 	<li class="produtos">
-	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>" class="id_produto">
+	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>" class="classe_produto">
 	<figure>
 	<img src="produtos/<?= $produto['ID_PRODUTO'] ?>.png"
 	alt="<?= $produto['NOME_PRODUTO'] ?>">
 	<figcaption><?= $produto['NOME_PRODUTO'] ?></figcaption>
 	</figure>
 	</a>
-	<p><?= $produto['PRECO_PRODUTO']?></p>
+	<p class="preco"><?= $produto['PRECO_PRODUTO']?></p>
 	<button name="add_carrinho" class="add_carrinho">+</button>
 	</li>
+	
 	<?php endwhile; ?>
 	</ul>	
 	

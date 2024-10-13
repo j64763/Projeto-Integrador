@@ -17,9 +17,16 @@
       		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
 			 <script src="js/jquery.js"></script>
-
 			
-      </head>
+			<script>
+			$(document).ready(function() {
+				$('#comprar').click(function() {
+					<p>produto clicado</p>
+				})
+			});
+			</script>
+      
+	</head>
 
 		<body>
 		<?php include("cabeçalho.php"); ?>

@@ -37,6 +37,7 @@
 				<label for="cpf">CPF</label> <br>
 				<input type="text" name="cpf"  id="cpf" required> <br>
 				</fieldset>
+				
 				<!--class="alinhamento" id="esquerda" id="alinhamento-cadastro"-->
 				<fieldset class="w3-container w3-left col-md-6" </fieldset>
 				<label for="cep">CEP</label> <br>

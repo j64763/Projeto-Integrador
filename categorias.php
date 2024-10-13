@@ -64,15 +64,15 @@
 			$produto = mysqli_fetch_array($dados)*/
 		?>
 	<li>
-	<a href="detalhes-produto.php?id=<?= $row['ID_PRODUTO'] ?>">
+	<a href="detalhes-produto.php?id=<?= $row['ID_PRODUTO'] ?>" class="classe_produto">
 	<figure>
 	<img src="produtos/<?= $row['ID_PRODUTO'] ?>.png"
 	alt="<?= $row['NOME_PRODUTO'] ?>">
 	<figcaption><?= $row['NOME_PRODUTO'] ?></figcaption>
 	</figure>
 	</a>
-	<p><?= $row['PRECO_PRODUTO']?></p>
-	<button>+</button>
+	<p class="preco"><?= $row['PRECO_PRODUTO']?></p>
+	<button name="add_carrinho" class="add_carrinho">+</button>
 	</li>
 	<?php endwhile; ?>
 	</ul>	

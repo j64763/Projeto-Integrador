@@ -31,16 +31,16 @@
 	$dados = mysqli_query($conexao, "SELECT * FROM produto ORDER BY DATA_CADASTRO DESC LIMIT 0, 3");
 	while ($produto = mysqli_fetch_array($dados)):
 	?>
-	<li>
-	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>">
+	<li class="produtos">
+	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>" class="classe_produto">
 	<figure>
 	<img src="produtos/<?= $produto['ID_PRODUTO'] ?>.png"
 	alt="<?= $produto['NOME_PRODUTO'] ?>">
 	<figcaption><?= $produto['NOME_PRODUTO'] ?></figcaption>
 	</figure>
 	</a>
-	<p><?= $produto['PRECO_PRODUTO']?></p>
-	<button>+</button>
+	<p class="preco"><?= $produto['PRECO_PRODUTO']?></p>
+	<button name="add_carrinho" class="add_carrinho">+</button>
 	</li>
 	<?php endwhile; ?>
 	</ul>	

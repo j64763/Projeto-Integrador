@@ -1,12 +1,25 @@
-button {
+.add_carrinho {
     border-radius: 25px;
     padding: 10px;
     height: auto;
-    width: 20%;
+    width: 18%;
     border: none;
     background-color: #492618;
     color: white;
 
+}
+
+.preco {
+    margin-top: 81px;
+}
+
+img {
+    width: 144px;
+    height: 152px;
+}
+
+figure {
+    height: 50%;
 }
 
 button:hover {
@@ -33,6 +46,7 @@ button:hover {
     border-radius: 20px;
     height: 350px;
     width: 25%;
+
 
     
 }

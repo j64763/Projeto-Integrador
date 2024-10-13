@@ -22,12 +22,12 @@
 	</div>
 
 	<div  class="w3-container w3-center">
-	<form id="formulario">
-		
+	<form id="disponibilidade" action="validar_disponibilidade.php" method="get" >
+	<br/><br/><br/><br/>
 		<label for="email">E-mail:</label><br/>
-		<input type="email" id="email" placeholder="email@gmail.com"></input><br/><br/>
+		<input type="email" name="email" id="email" placeholder="email@gmail.com"></input><br/><br/>
 		<label>CEP:</label><br/>
-		<input type="password" name="senha"></input><br/><br/>
+		<input type="text" name="cep"></input><br/><br/>
 		
 		
 
