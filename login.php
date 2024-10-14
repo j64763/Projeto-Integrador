@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+
+?>
+
 <!DOCTYPE html>
 	<html lang="pt-br">
 		<head>
@@ -13,6 +21,16 @@
 			<!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
 			<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		
+			<script>
+				$(document).ready(function(){
+					$('#').click(function(){
+
+					})
+				})
+			</script>
+		
+		
 		</head>
 <body>
 	<div id="topo">
@@ -30,6 +48,12 @@
 		<label>Senha:</label><br/>
 		<input type="password" name="senha"></input><br/><br/>
 		
+		<?php
+			if($erro == 1) {
+				echo '<font color="#FF0000">Usuário ou senha inválidos</font><br><br/>';
+			}
+		?>
+
 		<a href="recuperar-senha.php">Esqueci a senha</a>
 		<br/>
 		<br/>

@@ -18,7 +18,7 @@
 		<body>
 
             <div id="topo">
-            <div id="logo"><a href="index.html"><img src="img/logo5.png" width="150px" height="150px"/></a></div>
+            <div id="logo"><a href="index.php"><img src="img/logo5.png" width="150px" height="150px"/></a></div>
             <div id="cabecalho"><h1>Recuperar Senha</h1>
                 Entre com seu e-mail para iniciar o processo de recuperação de senha</div>
             </div>
@@ -28,7 +28,7 @@
                     <label for="email">E-mail</label><br>
                     <input type="email" id="email" name="email" placeholder="meuemail@dominio.com"><br><br>
                     <input type="submit" value="Enviar" class="botoes">
-					<input type="button" value="voltar" name="voltar" class="botoes"></input><br/><br/>
+					<input type="button" value="voltar" name="voltar" class="botoes" id="voltar"></input><br/><br/>
                 </form>
 
             </div>
@@ -41,7 +41,7 @@
 
 
 
-	
+			<script src="js/script.js"></script>
 	        <footer>
 	<!--<div class="clear" id="rodape">
 		<p>rodape</p>

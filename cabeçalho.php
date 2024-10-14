@@ -4,7 +4,7 @@
               
               <h1><img src="img/logo-menu.png" alt="logo mania de cupcake" id="logo"></h1>
               
-              <form id="campo-pesquisa">
+              <form id="campo-pesquisa" action="pagina-produtos.php?" method="get" >
               <input type="search" placeholder="Pesquise aqui"></input>
               <button><i class="material-icons">search</i></button>
               </form>

@@ -16,6 +16,7 @@
 .imagem-produtos {
     width: 144px;
     height: 152px;
+    border-radius: 12px;
 }
 
 figure {

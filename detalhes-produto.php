@@ -71,7 +71,7 @@
 		?>
 <section class="imagem">
 
-<img src="produtos/<?= $row['ID_PRODUTO'] ?>.png" alt="<?= $row['NOME_PRODUTO'] ?>">
+<img src="produtos-detalhes/<?= $row['ID_PRODUTO'] ?>.png" alt="<?= $row['NOME_PRODUTO'] ?>">
 
 </section>
 

@@ -42,27 +42,29 @@
             <div class="">
                 
                 <h1 class="">Meu carrinho</h1>
-                <p class="">Ola Fulana</p>
-                <a href="index.php">Sair</a>
+                <p class="">Ola <?= $_SESSION['usuario']?></p>
+                <a href="sair.php">Sair</a>
             </div>
         </div>
 
         
-        <div class="detalhes-pedido">
+        <div class="detalhes-pedido"></br>
             <p>pedido x detalhes</p>
+            
+            <div class="item">
             <div class="imagem-produto">
             <img src="img/mais-comprados-painel2.png" alt="produto1">
             </div>
 
             <div class="detalhes-produto">
             <h3>bolo de chocolate com cobertura de merengue</h3>
-            <p id="preco-carrinho">R$10,00 UN</p>
-            <button type="button" id="remover-unidade" onclick="removerUnidade()">-</button>
-            <input type="number" id="quantidade" name="quantidade" min="1" max="100">
-            <button type="button" id="adicionar-unidade" onclick="adicionarUnidade()">+</button>
+            <p id="preco-carrinho">R$10,00 UN</p></br>
+            <button type="button" id="remover-unidade" onclick="function remover()">-</button>
+		    <input type="text" id="quantidade" name="quantidade" value="0" required maxlength="3">
+		    <button type="button" id="adicionar-unidade">+</button>
             <button type="button" id="remover-item"><i class="material-icons">delete</i></button>
             </div>
-       
+            </div>
         
 
         <div class="total">
@@ -73,11 +75,11 @@
         </div>
 
         <div class="finalizar">
-            <button type="button">continuar comprando</button>
+            <button type="button" onclick="window.location.href='pagina-produtos.php'">continuar comprando</button>
             <button type="submit">finalizar compra</button>
         </div>
     </div>
+    <script src="js/meu-jquery.js"></script>
     <script language="javascript" src="js/total.js"></script>
-
     </body>
 </html>

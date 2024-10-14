@@ -27,29 +27,29 @@
 			<form id="formulario" action="cadastrar.php" method="post">
 				<fieldset class="w3-container w3-left col-md-6" >
 				<label for="nome">Nome</label> <br>
-				<input type="text" name="nome"  id="nome" required> <br>
+				<input type="text" name="nome"  id="nome" required maxlength="50"> <br>
 				<label for="email">Email</label><br/>
-				<input type="email" name="email"  id="email" required></input><br/>
+				<input type="email" name="email"  id="email" required maxlength="30"></input><br/>
 				<label for="cel">Celular:</label><br/>
-				<input type="tel" id="cel" name="cel" placeholder="(11) xxxxx-xxxx" pattern="[0-11] ({2}) [0-11] {5} - [0-11] {4} " required><br/>
+				<input type="tel" id="cel" name="cel" placeholder="(11) xxxxx-xxxx" pattern="[0-11] ({2}) [0-11] {5} - [0-11] {4} " required maxlength="11"><br/>
 				<label for="senha">Senha:</label><br/>
-				<input type="password" name="password" id="senha" required></input><br/>
+				<input type="password" name="password" id="senha" required maxlength="32"></input><br/>
 				<label for="cpf">CPF</label> <br>
-				<input type="text" name="cpf"  id="cpf" required> <br>
+				<input type="text" name="cpf"  id="cpf" required maxlength="11"> <br>
 				</fieldset>
 
 				<!--class="alinhamento" id="esquerda" id="alinhamento-cadastro"-->
 				<fieldset class="w3-container w3-left col-md-6" </fieldset>
 				<label for="cep">CEP</label> <br>
-				<input type="text" name="cep" id="cep" required></input> <br>
+				<input type="text" name="cep" id="cep" required maxlength="8"></input> <br>
 				<label for="rua">Rua</label> <br>
-				<input type="text" name="rua" id="rua" required></input> <br>
+				<input type="text" name="rua" id="rua" required maxlength="20"></input> <br>
 				<label for="bairro">Bairro</label> <br>
-				<input type="text" name="bairro" id="bairro" required></input><br>
+				<input type="text" name="bairro" id="bairro" required maxlength="20"></input><br>
 				<label for="cidade">Cidade</label> <br>
-				<input type="text" name="cidade" id="cidade" required></input><br>
+				<input type="text" name="cidade" id="cidade" required maxlength="20"></input><br>
 				<label for="complemento">Complemento</label> <br>
-				<input type="text" name="complemento" id="complemento" required></input><br>
+				<input type="text" name="complemento" id="complemento" maxlength="10"></input><br>
 				<label for="estado">Estado</label> <br>
 				<select name="estado" id="estado">
 				<option>AC</option>
@@ -78,8 +78,10 @@
 				<option>SE</option>
 				<option>TO</option>
 				</select>
-		<br/><br/>
-
+				<br>
+				<label for="numero_casa">N°</label> <br>
+				<input type="text" name="numero_casa" id="numero_casa" maxlength="4"></input><br>
+				<br/><br/>
 				</fieldset>
 
 				<div class="w3-container w3-center">

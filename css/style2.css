@@ -86,10 +86,19 @@ input {
     padding: 5px 20px;
 
 }
+
+
+#numero_casa {
+    display: inline;
+    width: 60px;
+    padding: 10px;
+}
+
 #estado {
     border-radius: 20px;
     padding: 10px;
     border: none;
+    display: inline;
 }
 
 .checkbox {
