@@ -8,7 +8,9 @@
     color: white;
 
 }
-
+form {
+    display: inline;
+}
 .preco {
     margin-top: 81px;
 }

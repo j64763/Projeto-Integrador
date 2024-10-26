@@ -27,14 +27,15 @@ $resultado = mysqli_fetch_array($consulta);
 
 if ($resultado) {
     echo "usuario ja existe";
-    var_dump($resultado);
+    //var_dump($resultado);
 } else {
 
     $sql = "INSERT into cliente(ID_CLIENTE, NOME_CLIENTE, EMAIL_CLIENTE, CELULAR, SENHA_CLIENTE, CPF_CLIENTE) values (null,'$nome','$email','$celular' , '$senha', '$cpf')";
 
 if (mysqli_query($link, $sql)) {
     $ultimo_id = mysqli_insert_id($link);
-    echo 'Cadastro de cliente efetivado com sucesso. Último id: ' . $ultimo_id;
+   
+    //echo 'Cadastro de cliente efetivado com sucesso. Último id: ' . $ultimo_id;
  } else {
         echo'Erro ao cadastrar usuário';
     }
@@ -44,7 +45,8 @@ $nova_consulta = "INSERT into endereco( CEP, RUA, BAIRRO, CIDADE, ESTADO, NUMERO
 
 if (mysqli_query($link, $nova_consulta)) {
     $ultimo_id_endereco = mysqli_insert_id($link);
-    echo 'Cadastro de endereço realizado com sucesso Último id: ' . $ultimo_id_endereco;
+
+    //echo 'Cadastro de endereço realizado com sucesso Último id: ' . $ultimo_id_endereco;
 } else {
        echo'Erro ao cadastrar endereco';
    }
@@ -58,9 +60,10 @@ if (mysqli_query($link, $nova_consulta)) {
    } else {
           echo'Erro ao atualizar ID';
       }
-   
-}
 
+      header('Location:meusdados.php');
+
+}
 
 
 

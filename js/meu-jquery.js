@@ -10,14 +10,14 @@
             
             // Verifica se o valor atual não é um número, e se for, inicializa com 0
             if (isNaN(valor)) {
-                valor = 0;
+                valor = 1;
             }
             
             // Atualiza o valor com base na mudança
             valor += mudanca;
             
             if (valor < 0) {
-                valor = 0;
+                valor = 1;
             }
 
             // Define o novo valor no input

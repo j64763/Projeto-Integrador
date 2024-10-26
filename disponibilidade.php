@@ -29,7 +29,7 @@
 		<!--<label for="email">E-mail:</label><br/>
 		<input type="email" name="email" id="email" placeholder="email@gmail.com"></input><br/><br/>-->
 		<label>CEP:</label><br/>
-		<input type="text" name="cep"></input><br/><br/>
+		<input type="text" name="cep" required maxlength="9"></input><br/><br/>
 		
 		<input type="submit" value="conferir" name="conferir" class="botoes"></input>
 		<input type="button" value="voltar" name="voltar" class="botoes" id="voltar"></input><br/><br/>

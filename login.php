@@ -4,6 +4,13 @@ session_start();
 
 $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
 
+if (isset($_SESSION['usuario'])) {
+    header('Location: meusdados.php'); // Redireciona se já estiver logado
+    exit();
+}
+
+
+
 ?>
 
 <!DOCTYPE html>

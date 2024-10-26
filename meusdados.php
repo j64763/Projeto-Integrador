@@ -34,6 +34,22 @@ session_start();
             
             </div>
         </div>
+        <table>
+        <tr style="border-style: solid;">
+            <td><a href="#">Meus Dados</a></td>
+        </tr>
+        <tr>
+          <td><a href="#">Meus Pedidos</a></td>
+        </tr>
+        <tr>
+          <td><a href="#">Métodos de Pagamento</a></td>
+        </tr>
+        <tr>
+          <td><a href="#">SAC</a></td>
+        </tr>
+        </table>
+
+        <br>
         <input type="button" value="Ir para o carrinho" name="voltar" class="botoes" onclick="window.location.href='carrinho.php'"></input> 
 </body>        
 </html>

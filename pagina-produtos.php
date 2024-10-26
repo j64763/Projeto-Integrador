@@ -61,27 +61,42 @@
 			<!--Conteudo principal-->
 
 
-	
+
 			<div class="produto container lista-produtos">
+			
 			<ul>
+			
 	<?php
 	$conexao = mysqli_connect("127.0.0.1", "site", "etis", "MANIADECUPCAKE");
 	$dados = mysqli_query($conexao, "SELECT * FROM produto");
+
+			if (isset($_POST['pesquisa'])) {
+				$dados = mysqli_query($conexao, "SELECT * FROM produto where NOME_PRODUTO like '%".$_POST['pesquisa']."%'");
+			}
+
 	while ($produto = mysqli_fetch_array($dados)):
 
+
+
 	?>
-	
+	<form action="carrinho.php" method="post" >
 	<li class="produtos">
 	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>" class="classe_produto">
 	<figure>
 	<img class="imagem-produtos" src="produtos/<?= $produto['ID_PRODUTO'] ?>.png"
-	alt="<?= $produto['NOME_PRODUTO'] ?>">
+	alt="<?= $produto['NOME_PRODUTO'] ?>"/>
 	<figcaption><?= $produto['NOME_PRODUTO'] ?></figcaption>
 	</figure>
 	</a>
 	<p class="preco"><?= $produto['PRECO_PRODUTO']?></p>
-	<button name="add_carrinho" class="add_carrinho">+</button>
+	<button class="add_carrinho">+</button>
+	<input name="id" type="hidden" value="<?= $produto['ID_PRODUTO'] ?>"/>
+	<input name="quantidade" type="hidden" value="1"/>
+	<input name="nome" type="hidden" value="<?= $produto['NOME_PRODUTO']?>"/>
+	<input name="preco" type="hidden" value="<?= $produto['PRECO_PRODUTO']?>"/>
 	</li>
+	</form>
+	
 	
 	<?php endwhile; ?>
 	</ul>	

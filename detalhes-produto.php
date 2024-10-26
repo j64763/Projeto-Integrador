@@ -68,24 +68,37 @@
 		 /*while ($produto = mysqli_fetch_array($dados)): 
 			$dados
 			$produto = mysqli_fetch_array($dados)*/
+
+			$src = "produtos-detalhes/".$row['ID_PRODUTO'].".png";
+
+			$nome = $row['NOME_PRODUTO'];
+
+			$preco = $row['PRECO_PRODUTO'];
+
+			$id = $row['ID_PRODUTO'];
+
 		?>
+<form action="carrinho.php" method="post">
 <section class="imagem">
 
-<img src="produtos-detalhes/<?= $row['ID_PRODUTO'] ?>.png" alt="<?= $row['NOME_PRODUTO'] ?>">
+<img name="imagem-produto" src="<?= $src ?>" alt="<?= $nome?>">
 
 </section>
 
 <section class="detalhes">
-	<h3><?= $row['NOME_PRODUTO']?></h3>
+	<h3 name="nome"><?= $nome?></h3>
 	<p id="descricao">
 	<?= $row['DESCRICAO']?>
 	</p>
-	<p id="preco">R$ <?= $row['PRECO_PRODUTO']?></p>
+	<p id="preco" name="preco">R$ <?= $preco?></p>
 	<form >
 		<button type="button" id="remover-unidade" onclick="function remover()">-</button>
-		<input type="text" id="quantidade" name="quantidade" value="0">
+		<input type="number" id="quantidade" name="quantidade" value="1"  min="1" max="100">
 		<button type="button" id="adicionar-unidade">+</button>
-		<button type="button" id="comprar">COMPRAR</button>
+		<button type="submit" id="comprar">COMPRAR</button>
+		<input name="id" type="hidden" value="<?= $id ?>"/>
+		<input name="nome" type="hidden" value="<?= $nome ?>"/>
+		<input name="preco" type="hidden" value="<?= $preco ?>"/>
 	</form>
 	<p id="ingredientes">
 	<?= $row['COMPOSICAO_PRODUTO']?>
@@ -103,6 +116,8 @@
 		</tr>
 	</table>
 </section>
+</form>
+
 <?php
 endwhile;
 // Fecha a declaração e a conexão

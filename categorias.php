@@ -56,24 +56,35 @@
 
 		if ($result->num_rows > 0) 
 			// Processa todos os resultados
-			while ($row = $result->fetch_assoc()) :
+			while ($produto = $result->fetch_assoc()) :
 
 
 		 /*while ($produto = mysqli_fetch_array($dados)): 
 			$dados
 			$produto = mysqli_fetch_array($dados)*/
 		?>
-	<li>
-	<a href="detalhes-produto.php?id=<?= $row['ID_PRODUTO'] ?>" class="classe_produto">
+	
+	
+
+	<form action="carrinho.php" method="post" >
+	<li class="produtos">
+	<a href="detalhes-produto.php?id=<?= $produto['ID_PRODUTO'] ?>" class="classe_produto">
 	<figure>
-	<img class="imagem-produtos" src="produtos/<?= $row['ID_PRODUTO'] ?>.png"
-	alt="<?= $row['NOME_PRODUTO'] ?>">
-	<figcaption><?= $row['NOME_PRODUTO'] ?></figcaption>
+	<img class="imagem-produtos" src="produtos/<?= $produto['ID_PRODUTO'] ?>.png"
+	alt="<?= $produto['NOME_PRODUTO'] ?>"/>
+	<figcaption><?= $produto['NOME_PRODUTO'] ?></figcaption>
 	</figure>
 	</a>
-	<p class="preco"><?= $row['PRECO_PRODUTO']?></p>
-	<button name="add_carrinho" class="add_carrinho">+</button>
+	<p class="preco"><?= $produto['PRECO_PRODUTO']?></p>
+	<button class="add_carrinho">+</button>
+	<input name="id" type="hidden" value="<?= $produto['ID_PRODUTO'] ?>"/>
+	<input name="quantidade" type="hidden" value="1"/>
+	<input name="nome" type="hidden" value="<?= $produto['NOME_PRODUTO']?>"/>
+	<input name="preco" type="hidden" value="<?= $produto['PRECO_PRODUTO']?>"/>
+	</form>
 	</li>
+
+
 	<?php endwhile; ?>
 	</ul>	
 

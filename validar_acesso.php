@@ -8,7 +8,7 @@ session_start();
 
 require_once('conexao.php');
 $email = $_POST['email'];
-$senha = $_POST['senha'];
+$senha = md5($_POST['senha']);
 
 $sql = "SELECT * FROM cliente WHERE EMAIL_CLIENTE = '$email' AND SENHA_CLIENTE = '$senha' ";
 

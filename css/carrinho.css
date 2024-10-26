@@ -1,5 +1,13 @@
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type="number"] {
+    -moz-appearance: textfield; /* Faz o campo de número parecer um campo de texto */
+}
 
 * { /*limpa todas as formatações padrão*/
     margin: 0;
@@ -18,6 +26,10 @@
     
     }
 
+    li {
+        list-style: none;
+        height: 244px;
+    }
 
     
     a:link{ /*cor do link*/
@@ -48,19 +60,23 @@
         
     }
 
-    .imagem-produto {
-        position: absolute;
-        width: 30%;
-        margin-top: 20px;
+   .imagem-produto {
+        /*position: absolute;
+        margin-top: 30px;*/
+
+        padding: 30px;
+        display: inline;
+        
     }
     .detalhes-produto {
         position: relative;
         float: right;
         width: 80%;
-        margin-top: 30px;
+        margin-top: 10px;
+        display: inline;
     }
 
-    .detalhes-produto h3 {
+    .detalhes-produto h4 {
         margin-bottom: 30px;
     }
 
@@ -118,15 +134,18 @@
         color: white;
     }
 
-    #quantidade {
+    #quantidade{
         border:none;
         border-radius: 20px;
         padding: 10px;
         margin-left: 10px;
         margin-right: 10px;
     }
-    #remover-item {
-        margin-left: 70%;
+    .remover-item {
+        margin-left: 6%;
+    }
+    .atualizar-quantidade {
+        margin-left: 50%;
     }
 
     button:hover {
@@ -164,8 +183,8 @@
         width: 100%;
 
     }
-    #remover-item {
-        margin-left: 50%;
+    .remover-item {
+        margin-left: 20%;
         margin-right: auto;
 
         margin-top: 10px;
@@ -173,5 +192,9 @@
     .detalhes-produto p {
         margin-bottom: 10px;
     }
+    .atualizar-quantidade {
+        margin-left: 20%;
+    }
+
 }
 

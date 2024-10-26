@@ -33,7 +33,7 @@
 				<label for="cel">Celular:</label><br/>
 				<input type="tel" id="cel" name="cel" placeholder="(11) xxxxx-xxxx" pattern="[0-11] ({2}) [0-11] {5} - [0-11] {4} " required maxlength="11"><br/>
 				<label for="senha">Senha:</label><br/>
-				<input type="password" name="password" id="senha" required maxlength="32"></input><br/>
+				<input type="password" name="senha" id="senha" required maxlength="32"></input><br/>
 				<label for="cpf">CPF</label> <br>
 				<input type="text" name="cpf"  id="cpf" required maxlength="11"> <br>
 				</fieldset>

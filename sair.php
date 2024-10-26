@@ -24,7 +24,14 @@ unset($_SESSION['usuario']);
 </head>
 
 <body>
+<div id="topo">
+	<div id="logo"><a href="index.php"><img src="img/logo-menu.png"/></a></div>
+	<div id="cabecalho"><h1>Logout</h1>
+		Até breve</div>
+	</div>
+	
 
+<br><br>
 <input type="button" value="voltar" name="voltar" class="botoes" onclick="window.location.href='index.php'"></input>
 <script src="js/script.js"></script>
 </body>
