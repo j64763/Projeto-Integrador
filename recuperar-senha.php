@@ -27,8 +27,6 @@
                 <form action="senha_alterada.php" target="_top" method="post">
                     <label for="email">E-mail</label><br>
                     <input type="email" id="email" name="email" placeholder="meuemail@dominio.com"><br><br>
-					<label for="email">Nova Senha</label><br>
-                    <input type="password" id="senha" name="senha"><br><br>
                     <input type="submit" value="Enviar" class="botoes">
 					<input type="button" value="voltar" name="voltar" class="botoes" id="voltar"></input><br/><br/>
                 </form>

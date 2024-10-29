@@ -1,0 +1,43 @@
+
+.conteudo-principal {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 75%;
+
+}
+
+
+
+.botoes {
+    border-radius: 20px;    
+    border: none;
+    padding: 10px;
+    background-color: #492618;
+    color: white;
+    margin-left: 35%;
+    margin-right: 10%;
+
+}
+
+.tabela-dados {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.tabela-dados td {
+    padding: 10px;
+    border: 1px solid grey;
+
+}
+
+@media (max-width: 600px) {
+
+    .botoes {
+
+        margin-left: 10%;
+        margin-right: 20%;
+}
+}

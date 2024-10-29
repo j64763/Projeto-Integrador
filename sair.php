@@ -2,7 +2,6 @@
 
 session_start();
 
-unset($_SESSION['usuario']);
 
 
 ?>
@@ -24,6 +23,10 @@ unset($_SESSION['usuario']);
 </head>
 
 <body>
+<?php
+session_unset();
+session_destroy();
+?>
 <div id="topo">
 	<div id="logo"><a href="index.php"><img src="img/logo-menu.png"/></a></div>
 	<div id="cabecalho"><h1>Logout</h1>

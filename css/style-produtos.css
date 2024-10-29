@@ -88,6 +88,11 @@ input[type="number"] {
     -moz-appearance: textfield; /* Faz o campo de número parecer um campo de texto */
 }
 
+.scale-icon {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% */
+    transition: transform 0.2s; /* Transição suave */
+}
+
 @media (max-width: 600px) {
     button {
     display: none;

@@ -47,6 +47,8 @@ a:active{ /*cor ao clicar*/
    
 }
 
+
+
 #cabecalho{
     
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -113,6 +115,7 @@ label {
     letter-spacing: 3px;
 
 }
+
 button:hover {
     cursor: pointer;
 }
@@ -124,6 +127,77 @@ button:hover {
 .botoes {
     display: inline;
     margin-right: 10px;
+    text-align: center;
+}
+
+#esquerdo {
+    border: 1px solid grey;
+    width: 49%;
+    float: right;
+    text-align: left;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+#produtos {
+    border: 1px solid grey;
+    width: 49%;
+    display: inline-block;
+    padding-right: 30px;
+    padding-top: 10px;
+
+}
+#valores {
+
+    text-align: right;
+}
+.radio {
+
+    width: 20px;
+    height: 20px;
+    padding: 5px 20px;
+    margin: 10px;
+
+}
+li {
+    list-style: none;
+    /*height: 244px;*/
+}
+#confirmar {
+    font-family: 'Varela Round', sans-serif;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: grey;
+    font-size: 12px;
+    letter-spacing: 3px;
+
+}
+.cartao input{
+    margin: 10px;
+    
+}
+#data {
+    width: 100px;
+}
+
+#cod {
+    width: 100px;
+}
+
+.cartao label{
+    text-align: left;
+}
+
+
+.botao-confirmar{
+    margin-top: 30px;
+    margin-left: 20%;
+    color:#492618;
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    background-color: #f2d0da;
+    border: none;
 }
 
 @media (max-width: 600px){
@@ -133,5 +207,15 @@ button:hover {
     #formulario {
         text-align: center;
         margin-left: 10%;
+    }
+    #esquerdo {
+
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    #produtos {
+
+        width: 100%;
     }
 }   

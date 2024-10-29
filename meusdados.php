@@ -2,7 +2,7 @@
 <?php
 
 session_start();
-
+print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,7 @@ session_start();
             <meta http-equiv="X-UA-Compatible" content="IE-edge">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="css/carrinho.css"> 
+            <link rel="stylesheet" href="css/meusdados.css"> 
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
 
@@ -34,15 +35,17 @@ session_start();
             
             </div>
         </div>
-        <table>
-        <tr style="border-style: solid;">
-            <td><a href="#">Meus Dados</a></td>
+
+        <div class=conteudo-principal>
+        <table class="tabela-dados">
+        <tr>
+           <td><a href="#">Meus Dados</a></td>
         </tr>
         <tr>
           <td><a href="#">Meus Pedidos</a></td>
         </tr>
         <tr>
-          <td><a href="#">Métodos de Pagamento</a></td>
+          <td><a href="#">Métodos de pagamento</a></td>
         </tr>
         <tr>
           <td><a href="#">SAC</a></td>
@@ -50,6 +53,10 @@ session_start();
         </table>
 
         <br>
+        <div class="botao">
         <input type="button" value="Ir para o carrinho" name="voltar" class="botoes" onclick="window.location.href='carrinho.php'"></input> 
-</body>        
+        <button type="button" onclick="window.location.href='index.php'">voltar</button>
+        </div>
+        </div>
+    </body>        
 </html>

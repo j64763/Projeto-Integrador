@@ -26,8 +26,8 @@ $dados_usuario = mysqli_fetch_array($resultado);
 
 
    if(isset($dados_usuario["EMAIL_CLIENTE"])) {
+        $_SESSION['id_usuario'] = $dados_usuario["ID_CLIENTE"];
         $_SESSION['usuario'] = $dados_usuario["NOME_CLIENTE"];
-
         header('Location: meusdados.php');
     }
     else {

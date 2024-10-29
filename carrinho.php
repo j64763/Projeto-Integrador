@@ -1,8 +1,8 @@
 <?php
 session_start();
-
+print_r($_SESSION);
 // Verifica se o usuário está logado
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['id_usuario'])) {
     header('Location: login.php?erro=1');
     echo "Faça Login para continuar";
     exit;
@@ -52,6 +52,7 @@ if (isset($_POST['id'])) {
 
     // Atualiza o carrinho na sessão
     $_SESSION['carrinho'] = $carrinho;
+
 }
 
 // Cálculo do subtotal e total
@@ -59,6 +60,10 @@ foreach ($carrinho as $item) {
     $subtotal += $item['preco'] * $item['quantidade'];
 }
 $total = $subtotal + $frete;
+
+$_SESSION['subtotal'] = $subtotal;
+$_SESSION['frete'] = $frete;
+$_SESSION['total'] = $total;
 
 ?>
 
