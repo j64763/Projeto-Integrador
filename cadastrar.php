@@ -2,69 +2,71 @@
 
 require_once('conexao.php');
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$celular = $_POST['cel'];
-$senha = md5($_POST['senha']);
-$cpf = $_POST['cpf'];
+// Verificar se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$cep = $_POST['cep'];
-$rua = $_POST['rua'];
-$bairro = $_POST['bairro'];
-$cidade = $_POST['cidade'];
-$complemento = $_POST['complemento'];
-$estado = $_POST['estado'];
-$n_casa = $_POST['numero_casa'];
+    // Limpeza e validação dos dados
+    $nome = trim($_POST['nome']);
+    $email = trim($_POST['email']);
+    $celular = trim($_POST['cel']);
+    $senha = password_hash(trim($_POST['senha']), PASSWORD_DEFAULT); // Usar password_hash
+    $cpf = trim($_POST['cpf']);
+    $cep = trim($_POST['cep']);
+    $rua = trim($_POST['rua']);
+    $bairro = trim($_POST['bairro']);
+    $cidade = trim($_POST['cidade']);
+    $complemento = trim($_POST['complemento']);
+    $estado = trim($_POST['estado']);
+    $n_casa = trim($_POST['numero_casa']);
 
+    $objDb = new db();
+    $link = $objDb->conectar();
 
-$objDb = new db();
-$link = $objDb->conectar();
+    // Usar prepared statement para evitar SQL Injection
+    $stmt = $link->prepare("SELECT * FROM cliente WHERE NOME_CLIENTE = ?");
+    $stmt->bind_param("s", $nome);
+    $stmt->execute();
+    $resultado = $stmt->get_result()->fetch_assoc();
 
-$usuario_existe = "SELECT * from cliente where NOME_CLIENTE = '$nome'";
-$consulta = mysqli_query($link,$usuario_existe);
+    if ($resultado) {
+        echo "Usuário já existe.";
+    } else {
+        // Inserir o novo cliente
+        $stmt = $link->prepare("INSERT INTO cliente (NOME_CLIENTE, EMAIL_CLIENTE, CELULAR, SENHA_CLIENTE, CPF_CLIENTE) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $nome, $email, $celular, $senha, $cpf);
 
-$resultado = mysqli_fetch_array($consulta);
+        if ($stmt->execute()) {
+            $ultimo_id = $stmt->insert_id;
 
-if ($resultado) {
-    echo "usuario ja existe";
-    //var_dump($resultado);
-} else {
+            // Inserir o endereço
+            $stmt = $link->prepare("INSERT INTO endereco (CEP, RUA, BAIRRO, CIDADE, ESTADO, NUMERO_CASA, COMPLEMENTO, N_CLIENTE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssssss", $cep, $rua, $bairro, $cidade, $estado, $n_casa, $complemento, $ultimo_id);
 
-    $sql = "INSERT into cliente(ID_CLIENTE, NOME_CLIENTE, EMAIL_CLIENTE, CELULAR, SENHA_CLIENTE, CPF_CLIENTE) values (null,'$nome','$email','$celular' , '$senha', '$cpf')";
+            if ($stmt->execute()) {
+                // Atualizar ID do cliente
+                $ultimo_id_endereco = $stmt->insert_id;
 
-if (mysqli_query($link, $sql)) {
-    $ultimo_id = mysqli_insert_id($link);
-   
-    //echo 'Cadastro de cliente efetivado com sucesso. Último id: ' . $ultimo_id;
- } else {
-        echo'Erro ao cadastrar usuário';
+                $stmt = $link->prepare("UPDATE cliente SET ID_ENDERECO = ? WHERE ID_CLIENTE = ?");
+                $stmt->bind_param("ii", $ultimo_id_endereco, $ultimo_id);
+
+                if ($stmt->execute()) {
+                    echo 'ID atualizado';
+                } else {
+                    echo 'Erro ao atualizar ID';
+                }
+
+                // Redirecionar após o sucesso
+                header('Location:meusdados.php');
+                exit();
+            } else {
+                echo 'Erro ao cadastrar endereço';
+            }
+        } else {
+            echo 'Erro ao cadastrar usuário';
+        }
     }
 
-
-$nova_consulta = "INSERT into endereco( CEP, RUA, BAIRRO, CIDADE, ESTADO, NUMERO_CASA, COMPLEMENTO, N_CLIENTE, ID_ENDERECO) values ('$cep', '$rua', '$bairro', '$cidade', '$estado', '$n_casa', '$complemento','$ultimo_id', null)";
-
-if (mysqli_query($link, $nova_consulta)) {
-    $ultimo_id_endereco = mysqli_insert_id($link);
-
-    //echo 'Cadastro de endereço realizado com sucesso Último id: ' . $ultimo_id_endereco;
-} else {
-       echo'Erro ao cadastrar endereco';
-   }
-
-
-   $atualizar_id_cliente = "UPDATE cliente SET ID_ENDERECO='$ultimo_id_endereco' WHERE ID_CLIENTE='$ultimo_id'";
-
-   if (mysqli_query($link, $atualizar_id_cliente)) {
-       
-       echo 'ID atualizado';
-   } else {
-          echo'Erro ao atualizar ID';
-      }
-
-      header('Location:meusdados.php');
-
+    $stmt->close();
+    $link->close();
 }
-
-
-
 ?>

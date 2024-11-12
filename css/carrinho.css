@@ -135,7 +135,7 @@ input[type="number"] {
     }
 
     #quantidade{
-        border:none;
+        border:1px solid grey;
         border-radius: 20px;
         padding: 10px;
         margin-left: 10px;
@@ -194,6 +194,10 @@ input[type="number"] {
     }
     .atualizar-quantidade {
         margin-left: 20%;
+    }
+    #geral {
+
+        border: 2px solid red;
     }
 
 }

@@ -138,7 +138,9 @@ $total = isset($_SESSION['total']) ? $_SESSION['total'] : 0;
             <input type="radio" id="endereco" name="endereco" class="radio" value="<?=
                 $endereco_string;    
             ?>" require>
-            <span><?= $endereco_string ?></span>
+            <span><?= $endereco_string ?></span><br>
+            <a href="#">+ Adicionar endereço</a>
+            <a href="#">- Remover endereço</a>
         </div>
             <br><br>
             <p>Método de Pagamento:</p>    

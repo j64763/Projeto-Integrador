@@ -1,6 +1,8 @@
 <?php
 session_start();
+
 print_r($_SESSION);
+
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_usuario'])) {
     header('Location: login.php?erro=1');
@@ -61,9 +63,9 @@ foreach ($carrinho as $item) {
 }
 $total = $subtotal + $frete;
 
-$_SESSION['subtotal'] = $subtotal;
-$_SESSION['frete'] = $frete;
-$_SESSION['total'] = $total;
+    $_SESSION['subtotal'] = $subtotal;
+    $_SESSION['frete'] = $frete;
+    $_SESSION['total'] = $total;
 
 ?>
 
@@ -85,8 +87,9 @@ $_SESSION['total'] = $total;
             <a href="sair.php">Sair</a>
         </div>
     </div>
-
+   
     <ul>
+ 
         <div class="detalhes-pedido">
             
             <?php if (empty($carrinho)): ?>
@@ -96,7 +99,8 @@ $_SESSION['total'] = $total;
             <?php else: ?>
                 <p>pedido x detalhes</p>
                 <?php foreach ($carrinho as $i => $item): ?>
-    <li class="item">
+                  
+                    <li class="item">
         <div class="imagem-produto">
             <img src="<?= $item['img'] ?>" alt="<?= $item['nome'] ?>">
         </div>
@@ -104,7 +108,7 @@ $_SESSION['total'] = $total;
             <h4><?= $item['nome'] ?></h4>
             <p class="preco-carrinho">R$ <?= number_format($item['preco'], 2, ',', '.') ?></p>
             <button type="button" class="remover-unidade" onclick="remover(<?= $i ?>)">-</button>
-            <input type="number" id="quantidade" class="quantidade-<?= $i ?>" name="quantidade" min="1" max="100" value="<?= $item['quantidade'] ?>" required maxlength="3">
+            <input type="number" id="quantidade" class="quantidade-<?= $i ?>" name="quantidade" min="1" max="100" value="<?= $item['quantidade'] ?>" required maxlength="3" onchange="atualizarQuantidade(<?= $item['id'] ?>, this.value)">            
             <button type="button" class="adicionar-unidade" onclick="adicionar(<?= $i ?>)">+</button>
             <form method="post" style="display:inline;">
                 <input type="hidden" name="remover_item" value="<?= $item['id'] ?>">
@@ -115,8 +119,9 @@ $_SESSION['total'] = $total;
 <?php endforeach; ?>
             <?php endif; ?>
         </div>
-    </ul>
 
+    </ul>
+ 
     <?php if (!empty($carrinho)): // Verifica se o carrinho não está vazio ?>
         <div class="total">
             <p id="subtotal">subtotal R$ <?= number_format($subtotal, 2, ',', '.') ?></p>
@@ -124,7 +129,6 @@ $_SESSION['total'] = $total;
             <p id="frete">entrega R$ <?= $frete ?></p>
             <p id="total-compra">total: R$ <?= number_format($total, 2, ',', '.') ?></p>
         </div>
-
         <div class="finalizar">
             <button type="button" onclick="window.location.href='pagina-produtos.php'">continuar comprando</button>
             <button type="submit"  onclick="window.location.href='confirmar-endereco.php'">finalizar compra</button>
@@ -133,6 +137,9 @@ $_SESSION['total'] = $total;
 
 
     <script src="js/atualiza_quantidade.js"></script>
-    <script language="javascript" src="js/total.js"></script>
+    <!-- <script language="javascript" src="js/total.js"></script> -->/
+     <?echo $_POST['id'];
+     echo $_POST['quantidade'];?>
+
 </body>
 </html>

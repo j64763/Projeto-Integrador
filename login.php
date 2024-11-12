@@ -49,7 +49,10 @@ if (isset($_SESSION['usuario'])) {
 		
 		<?php
 			if($erro == 1) {
-				echo '<font color="#FF0000">Usuário ou senha inválidos</font><br><br/>';
+				echo '<font color="#FF0000">Usuário e/ou senha inválidos</font><br><br/>';
+			}
+			if($erro == 2) {
+				echo '<font color="#FF0000">Insira uma senha antes de continuar</font><br><br/>';
 			}
 		?>
 
@@ -59,7 +62,7 @@ if (isset($_SESSION['usuario'])) {
 
 
 		<input type="submit" value="Login" name="entrar" class="botoes"></input>
-		<input type="button" value="voltar" name="voltar" class="botoes" id="voltar"></input><br/><br/>
+		<input type="button" value="voltar" name="voltar" class="botoes" id="voltar"  onclick="window.location.href='index.php'" ></input><br/><br/>
 		Não possui conta?<a href="disponibilidade.php"> Cadastrar</a><br/><br/>
 		
 	</form>

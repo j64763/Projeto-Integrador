@@ -77,6 +77,9 @@
 
 			$id = $row['ID_PRODUTO'];
 
+		
+
+
 		?>
 <form action="carrinho.php" method="post">
 <section class="imagem">
@@ -103,20 +106,83 @@
 	<p id="ingredientes">
 	<?= $row['COMPOSICAO_PRODUTO']?>
 	</p>
+
+	<?php
+endwhile;
+
+?>
+</section>
+</form>
+
+	<?php 
+
+$sql = "SELECT * FROM tabela_nutricional WHERE ID_PRODUTO = ?";
+		$stmt = $conn->prepare($sql);
+
+		if ($stmt === false) {
+			die("Erro na preparação da consulta: " . $conn->error);
+		}
+		$stmt->bind_param("i", $id);
+
+		$stmt->execute();
+
+		$result = $stmt->get_result();
+
+		if ($result->num_rows > 0) 
+			// Processa todos os resultados
+			while ($linha = $result->fetch_assoc()) :
+
+
+?>
 	<table>
 		<tr>
-		 <th colspan="3">Tabela Nutricional (1UN)</th>
+		 <th colspan="4">Tabela Nutricional (1UN)</th>
 		</tr>
 		<tr>
 		 <td>Valor Energético</td>
-		 <td>500Kcal</td>
+		 <td><?= $linha['CALORIAS']?></td>
+		 <td>Fibras Alimentares</td>
+		 <td><?= $linha['FIBRAS']?></td>
+		</tr>
+		<tr>
+		 <td>Gorduras Totais</td>
+		 <td><?= $linha['GORDURAS_TOTAIS']?></td>
+		 <td>Açúcares Totais</td>
+		 <td><?= $linha['AÇUCARES']?></td>
 		</tr>
 		<tr>
 		 <td>Gorduras Saturadas</td>
+		 <td><?= $linha['GORDURAS_SATURADAS']?></td>
+		 <td>Proteínas</td>
+		 <td><?= $linha['PROTEINAS']?></td>
 		</tr>
+		<tr>
+		 <td>Gorduras Trans</td>
+		 <td><?= $linha['GORDURAS_TRANS']?></td>
+		 <td>Cálcio</td>
+		 <td><?= $linha['CALCIO']?></td>
+		</tr>
+		<tr>
+		 <td>Colesterol</td>
+		 <td><?= $linha['COLESTEROL']?></td>
+		 <td>Ferro</td>
+		 <td><?= $linha['FERRO']?></td>
+		</tr>
+		<tr>
+		 <td>Sódio</td>
+		 <td><?= $linha['SODIO']?></td>
+		 <td>Potássio</td>
+		 <td><?= $linha['POTASSIO']?></td>
+		</tr>
+		<tr>
+		 <td>Carboidratos</td>
+		 <td><?= $linha['CARBOIDRATOS']?></td>
+		</tr>
+	
 	</table>
-</section>
-</form>
+
+
+
 
 <?php
 endwhile;

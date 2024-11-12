@@ -1,46 +1,62 @@
 
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
 <body>
-<?php
 
+<?php
 session_start();
 
 require_once('conexao.php');
-$email = $_POST['email'];
-$senha = md5($_POST['senha']);
 
-$sql = "SELECT * FROM cliente WHERE EMAIL_CLIENTE = '$email' AND SENHA_CLIENTE = '$senha' ";
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim($_POST['email']);
+    $senha = $_POST['senha'];
 
-$objDb = new db();
-$link = $objDb->conectar();
+    // Conectar ao banco de dados
+    $objDb = new db();
+    $link = $objDb->conectar();
 
-$resultado = mysqli_query($link, $sql); 
+    // Usar prepared statement para evitar SQL Injection
+    $stmt = $link->prepare("SELECT * FROM cliente WHERE EMAIL_CLIENTE = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
 
+    if ($resultado->num_rows > 0) {
+        $dados_usuario = $resultado->fetch_assoc();
 
-
-
- if($resultado) {
-    
-$dados_usuario = mysqli_fetch_array($resultado);
-
-
-   if(isset($dados_usuario["EMAIL_CLIENTE"])) {
-        $_SESSION['id_usuario'] = $dados_usuario["ID_CLIENTE"];
-        $_SESSION['usuario'] = $dados_usuario["NOME_CLIENTE"];
-        header('Location: meusdados.php');
+        // Verificar a senha
+        if (password_verify($senha, $dados_usuario["SENHA_CLIENTE"])) {
+            $_SESSION['id_usuario'] = $dados_usuario["ID_CLIENTE"];
+            $_SESSION['usuario'] = $dados_usuario["NOME_CLIENTE"];
+            header('Location: meusdados.php');
+            exit(); // Adicione exit após o redirecionamento
+        } else {
+            // Senha incorreta
+            header('Location: login.php?erro=2'); // Pode usar erro=2 para senha incorreta
+            exit();
+        }
+    } else {
+        // Email não encontrado
+        header('Location: login.php?erro=1'); // Pode usar erro=1 para email não encontrado
+        exit();
     }
-    else {
-        header('Location: login.php?erro=1');
-    }
-}
-else {
-    echo'Erro na execução da consulta';
+
+    // Fechar o statement
+    $stmt->close();
+} else {
+    echo 'Método de requisição inválido.';
 }
 
-
+// Fechar a conexão
+$link->close();
 ?>
 
-</html>
-
 </body>
+</html>

@@ -26,8 +26,8 @@ function atualizarCarrinho(index, quantidade) {
         // Atualize a página ou faça outra ação conforme necessário
         console.log(data);
     });
-}
-*/
+}*/
+
 
 
 function adicionar(index) {
@@ -53,19 +53,42 @@ function remover(index) {
 
 function atualizarSubtotal() {
     let total = 0;
-    const frete = 12; // Defina o valor do frete
+    let subtotal = 0;
+    const frete = 12; 
     const itens = document.querySelectorAll('.item');
 
     itens.forEach(item => {
         const quantidade = parseInt(item.querySelector('input[type="number"]').value);
         const preco = parseFloat(item.querySelector('.preco-carrinho').textContent.replace('R$', '').replace('.', '').replace(',', '.'));
-        total += quantidade * preco;
+        subtotal += quantidade * preco;
     });
 
-    total += frete; // Adiciona o frete ao total
+    total = frete + subtotal; // Adiciona o frete ao total
 
     // Atualiza a exibição do subtotal
-    document.getElementById('subtotal').textContent = `subtotal R$ ${total.toFixed(2).replace('.', ',')}`;
+    document.getElementById('subtotal').textContent = `subtotal R$ ${subtotal.toFixed(2).replace('.', ',')}`;
     // Atualiza o total final
     document.getElementById('total-compra').textContent = `total: R$ ${total.toFixed(2).replace('.', ',')}`;
 }
+
+function atualizarQuantidade(id, quantidade) {
+    const xhr = new XMLHttpRequest();
+    //xhr.open("POST", "carrinho.php", true);
+    //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.open("GET", "carrinho.php?q=" + quantidade);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                document.getElementById('subtotal').textContent = `subtotal R$ ${response.subtotal.toFixed(2).replace('.', ',')}`;
+                document.getElementById('total-compra').textContent = `total: R$ ${response.total.toFixed(2).replace('.', ',')}`;
+            } else {
+                console.error("Erro ao atualizar a quantidade.");
+            }
+        }
+    };
+
+    //xhr.send(`id=${id}&quantidade=${quantidade}`);
+}
+
