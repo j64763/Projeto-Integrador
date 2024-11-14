@@ -1,0 +1,149 @@
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Faz o campo de número parecer um campo de texto */
+}
+.imagem
+{
+    position: absolute;
+    width: 19%;
+    height: 300px;
+    background-color: #f4e3d7ff;;
+    border-radius: 20px;
+
+
+
+}
+
+.detalhes {
+    position: relative;
+    float: right;
+    width: 60%;
+
+
+
+}
+.imagem img {
+    margin-top: 30px;
+    margin-left: 15%;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.conteudo {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    height: 500px;
+
+}
+
+.conteudo form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+button {
+    border-radius: 25px;
+    padding: 10px;
+    height: auto;
+    width: 30px;
+    border: none;
+    background-color: #492618;
+    color: white;
+    margin-right: 20px;
+}
+
+#comprar {
+    width: 100px;
+}
+
+th {
+    background-color: #492618;
+    color: white;
+    padding: 20px;
+
+}
+
+table tr td {
+    border: 2px solid #492618;
+    padding: 10px;
+    text-align: center;
+    font-size: 10px;
+
+}
+
+table {
+    margin-left: 50%;
+}
+
+p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#quantidade {
+    margin-right: 20px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+}
+button:hover {
+    cursor: pointer;
+}
+@media (max-width: 600px) {
+    .imagem {
+        position: static;
+        width: auto;
+    }
+    #comprar {
+        max-width: 30%;
+
+    }
+
+    .detalhes {
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 20px;
+        position: static;
+        width: auto;
+        margin-bottom: 30px;
+
+    }
+    p {
+        font-size: 10px;
+
+    }
+
+    table {
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    .detalhes h1 {
+        font-weight: bold;
+    }
+    #preco {
+        font-weight: bold;
+        font-size: 15px;
+        margin-top: 30px;
+    }
+
+    form {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    footer {
+        display: none;
+    }
+}   

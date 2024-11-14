@@ -1,0 +1,13 @@
+{
+    "name": "desenv/mania",
+    "description": "projeto mania de cupcake",
+    "require": {
+        "endroid/qr-code": "^5.1"
+    },
+    "authors": [
+        {
+            "name": "Jaqueline",
+            "email": "jaqueline.a64763@gmail.com"
+        }
+    ]
+}
