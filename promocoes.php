@@ -40,7 +40,7 @@
 	<figcaption><?= $produto['NOME_PRODUTO'] ?></figcaption>
 	</figure>
 	</a>
-    <p class="preco"><?= $produto['PRECO_PROMOCIONAL']?></p>
+    <p class="preco"><del style="color:red;"><?= $produto['PRECO_PRODUTO']?></del><br><?= $produto['PRECO_PROMOCIONAL']?></p>
 	<button class="add_carrinho">+</button>
 	<input name="id" type="hidden" value="<?= $produto['ID_PRODUTO'] ?>"/>
 	<input name="quantidade" type="hidden" value="1"/>

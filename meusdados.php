@@ -38,7 +38,7 @@ session_start();
         <div class=conteudo-principal>
         <table class="tabela-dados">
         <tr>
-           <td><a href="#">Meus Dados</a></td>
+           <td><a href="atualizardados.php">Meus Dados</a></td>
         </tr>
         <tr>
           <td><a href="#">Meus Pedidos</a></td>

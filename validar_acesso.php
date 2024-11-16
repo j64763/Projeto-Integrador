@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $senha = $_POST['senha'];
 
+
     // Conectar ao banco de dados
     $objDb = new db();
     $link = $objDb->conectar();
@@ -37,9 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['usuario'] = $dados_usuario["NOME_CLIENTE"];
             header('Location: meusdados.php');
             exit(); // Adicione exit após o redirecionamento
+        } elseif ($senha == "") {
+            // Senha em branco
+            header('Location: login.php?erro=2'); // Pode usar erro=2 para senha em branco
+            exit();
         } else {
-            // Senha incorreta
-            header('Location: login.php?erro=2'); // Pode usar erro=2 para senha incorreta
+            header('Location: login.php?erro=1');
             exit();
         }
     } else {

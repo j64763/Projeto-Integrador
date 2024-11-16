@@ -13,7 +13,7 @@ function trocaBanner() {
             document.querySelector('#secao-banner a').href = "categorias.php?id=2";
             break;
         case "img/banner1.jpg":
-            document.querySelector('#secao-banner a').href = "categorias.php?id=9";
+            document.querySelector('#secao-banner a').href = "categorias.php?id=10";
             break;
         }
   

@@ -52,7 +52,7 @@ if (isset($_SESSION['usuario'])) {
 				echo '<font color="#FF0000">Usuário e/ou senha inválidos</font><br><br/>';
 			}
 			if($erro == 2) {
-				echo '<font color="#FF0000">Insira uma senha antes de continuar</font><br><br/>';
+				echo '<font color="#FF0000">Preencha a senha para continuar</font><br><br/>';
 			}
 		?>
 

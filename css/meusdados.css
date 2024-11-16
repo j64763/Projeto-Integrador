@@ -33,6 +33,15 @@
 
 }
 
+input {
+    border: none;
+    font-family: 'Varela Round', sans-serif;
+    color: #492618;
+}
+input:active {
+    border: none;
+
+}
 @media (max-width: 600px) {
 
     .botoes {

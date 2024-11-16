@@ -6,7 +6,7 @@
               
               <form id="campo-pesquisa" action="pagina-produtos.php?" method="post" >
               <input type="search" placeholder="Pesquise aqui" name="pesquisa"></input>
-              <button><i class="material-icons">search</i></button>
+              <button id="btn_pesquisa"><i class="material-icons">search</i></button>
               </form>
 
               <a href="login.php" id="login"><i class="material-icons">person_outline</i></a>

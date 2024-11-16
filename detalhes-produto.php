@@ -77,7 +77,8 @@
 
 			$id = $row['ID_PRODUTO'];
 
-		
+			
+
 
 
 		?>
@@ -93,6 +94,14 @@
 	<p id="descricao">
 	<?= $row['DESCRICAO']?>
 	</p>
+	<?php
+		if ($row['PROMOCAO'] == 1) {
+			echo "<del style='color:red;'><p id='preco' name='preco'>R$ $preco </p></del>";
+			$preco = $row['PRECO_PROMOCIONAL'];
+
+			
+		}
+	?>
 	<p id="preco" name="preco">R$ <?= $preco?></p>
 	<form >
 		<button type="button" id="remover-unidade" onclick="function remover()">-</button>
@@ -101,13 +110,16 @@
 		<button type="submit" id="comprar">COMPRAR</button>
 		<input name="id" type="hidden" value="<?= $id ?>"/>
 		<input name="nome" type="hidden" value="<?= $nome ?>"/>
+
 		<input name="preco" type="hidden" value="<?= $preco ?>"/>
+		
 	</form>
 	<p id="ingredientes">
 	<?= $row['COMPOSICAO_PRODUTO']?>
 	</p>
 
 	<?php
+		
 endwhile;
 
 ?>

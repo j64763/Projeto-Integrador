@@ -39,7 +39,7 @@
 				</fieldset>
 
 				<!--class="alinhamento" id="esquerda" id="alinhamento-cadastro"-->
-				<fieldset class="w3-container w3-left col-md-6" </fieldset>
+				<fieldset class="w3-container w3-left col-md-6">
 				<label for="cep">CEP</label> <br>
 				<input type="text" name="cep" id="cep" required maxlength="8"></input> <br>
 				<label for="rua">Rua</label> <br>

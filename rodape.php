@@ -1,4 +1,4 @@
-<footer class="container">
+<footer >
               <a href="index.php"><img src="img/logo-rodape.png" id="logo-rodape"/></a>
               <div>
                 

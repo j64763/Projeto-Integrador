@@ -130,7 +130,7 @@ $total = $subtotal + $frete;
             <p id="total-compra">total: R$ <?= number_format($total, 2, ',', '.') ?></p>
         </div>
         <div class="finalizar">
-            <button type="button" onclick="window.location.href='pagina-produtos.php'">continuar comprando</button>
+            <button type="button" onclick="window.location.href='pagina-produtos.php'" onclick="atualizarQuantidade()">continuar comprando</button>
             <button type="submit"  onclick="window.location.href='confirmar-endereco.php'">finalizar compra</button>
         </div>
     <?php endif; ?>

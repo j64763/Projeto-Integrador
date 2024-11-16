@@ -62,6 +62,7 @@
 		 /*while ($produto = mysqli_fetch_array($dados)): 
 			$dados
 			$produto = mysqli_fetch_array($dados)*/
+			$preco = $produto['PRECO_PRODUTO'];
 		?>
 	
 	
@@ -75,12 +76,31 @@
 	<figcaption><?= $produto['NOME_PRODUTO'] ?></figcaption>
 	</figure>
 	</a>
-	<p class="preco"><?= $produto['PRECO_PRODUTO']?></p>
+	<?php
+		if ($produto['PROMOCAO'] == 1) {
+			//echo "<del style='color:red;'><p id='preco' name='preco'>R$ $preco </p></del>";
+			$preco = $produto['PRECO_PROMOCIONAL'];
+
+			
+		}
+	?>
+	<p class="preco"><?php 
+	if ($produto['PROMOCAO'] == 1) {
+		$preco_antigo = $produto['PRECO_PRODUTO'];
+		echo "<del style='color:red;'>$preco_antigo</del> <br> $preco";
+	}else {
+		echo "$preco";
+	}
+
+	?>
+	
+</p>
+	
 	<button class="add_carrinho">+</button>
 	<input name="id" type="hidden" value="<?= $produto['ID_PRODUTO'] ?>"/>
 	<input name="quantidade" type="hidden" value="1"/>
 	<input name="nome" type="hidden" value="<?= $produto['NOME_PRODUTO']?>"/>
-	<input name="preco" type="hidden" value="<?= $produto['PRECO_PRODUTO']?>"/>
+	<input name="preco" type="hidden" value="<?= $preco ?>"/>
 	</form>
 	</li>
 
