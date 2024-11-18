@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             die("Erro na preparação da consulta: " . $conexao->error);
         }
 
-        $stmt->bind_param("ssi", $token, $expira, $usuario['ID_CLIENTE']);
+        $stmt->bind_param("sss", $token, $expira, $usuario['ID_CLIENTE']);
         if (!$stmt->execute()) {
             die("Erro ao executar a consulta: " . $stmt->error);
         }
@@ -90,12 +90,11 @@ try {
     $mail->isHTML(true);                                  //Set email format to HTML
     
     // Envia o e-mail - firebrick-mosquito-536476.hostingersite.com/redefinir_senha.php
-    $link_redefinicao = "firebrick-mosquito-536476.hostingersite.com
-/redefinir_senha.php?token=" . $token;
+    $link_redefinicao = "firebrick-mosquito-536476.hostingersite.com/redefinir_senha.php?token=" . $token;
     $mail->Subject = "Redefinicao de Senha";
     $mail->Body = "Clique no link para redefinir sua senha: " . $link_redefinicao;
 
-    // Enviar e-mail usando uma biblioteca apropriada ou método mais robusto
+    // Enviar e-mail 
    $mail->send();
 
         echo "Um e-mail foi enviado para você com instruções para redefinir sua senha.";

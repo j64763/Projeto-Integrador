@@ -67,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             <label for="senha">Nova Senha</label><br>
             <input type="password" id="senha" name="senha" required><br><br>
             <input type="submit" value="Enviar" class="botoes">
+            <input name="id" type="hidden" value="$id"/>
         </form>
     </div>
 </body>
@@ -79,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $senha = $_POST['senha'] ?? null;
+    $id = $_POST['id'];
 
 
     if (!$senha || strlen($senha) < 8) {
