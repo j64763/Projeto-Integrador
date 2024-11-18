@@ -52,7 +52,8 @@
 				<input type="text" name="complemento" id="complemento" maxlength="10"></input><br>
 				<label for="estado">Estado</label> <br>
 				<select name="estado" id="estado">
-				<option>AC</option>
+				<option>SP</option>
+				<!--<option>AC</option>
 				<option>AL</option>
 				<option>AP</option>
 				<option>AM</option>
@@ -74,9 +75,9 @@
 				<option>RO</option>
 				<option>RR</option>
 				<option>SC</option>
-				<option>SP</option>
+				
 				<option>SE</option>
-				<option>TO</option>
+				<option>TO</option>-->
 				</select>
 				<br>
 				<label for="numero_casa">N°</label> <br>

@@ -1,11 +1,17 @@
 
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require 'conexao.php'; // Inclua sua conexão com o banco de dados
+require 'conexao.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -51,19 +57,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             die("Erro ao executar a consulta: " . $stmt->error);
         }
 
-        // Envia o e-mail
-        $link_redefinicao = "http://maniadecupake.com/redefinir_senha.php?token=" . $token;
-        $assunto = "Recuperação de Senha";
-        $mensagem = "Clique no link para redefinir sua senha: " . $link_redefinicao;
-
-        // Enviar e-mail usando uma biblioteca apropriada ou método mais robusto
-        if (mail($email, $assunto, $mensagem)) {
-            echo "Um e-mail foi enviado para você com instruções para redefinir sua senha.";
-        } else {
-            echo "Falha ao enviar o e-mail.";
-        }
-    } else {
+      
+    }
+    else {
         echo "E-mail não encontrado.";
     }
+
 }
+
+
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'sacmaniadecupcake@gmail.com';                     //SMTP username
+    $mail->Password   = 'nlzn hpqq vnrx rjcj ';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('sacmaniadecupcake@gmail.com', 'SAC Mania de Cupcake');
+    $mail->addAddress($email);               //Name is optional
+
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    
+    // Envia o e-mail - firebrick-mosquito-536476.hostingersite.com/redefinir_senha.php
+    $link_redefinicao = "firebrick-mosquito-536476.hostingersite.com
+/redefinir_senha.php?token=" . $token;
+    $mail->Subject = "Redefinicao de Senha";
+    $mail->Body = "Clique no link para redefinir sua senha: " . $link_redefinicao;
+
+    // Enviar e-mail usando uma biblioteca apropriada ou método mais robusto
+   $mail->send();
+
+        echo "Um e-mail foi enviado para você com instruções para redefinir sua senha.";
+
+} catch (Exception $e) {
+    echo  "Falha ao enviar o e-mail.; Mailer Error: {$mail->ErrorInfo}";
+}
+
+
 ?>

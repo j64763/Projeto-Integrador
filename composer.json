@@ -2,7 +2,8 @@
     "name": "desenv/mania",
     "description": "projeto mania de cupcake",
     "require": {
-        "endroid/qr-code": "^5.1"
+        "endroid/qr-code": "^5.1",
+        "phpmailer/phpmailer": "^6.9"
     },
     "authors": [
         {

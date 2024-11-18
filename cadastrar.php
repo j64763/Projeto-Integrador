@@ -51,11 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($stmt->execute()) {
                     echo 'ID atualizado';
+                    
                 } else {
                     echo 'Erro ao atualizar ID';
                 }
 
-                // Redirecionar após o sucesso
+                session_start();
+                $_SESSION['usuario'] = $nome;
+                $_SESSION['id_usuario'] = $ultimo_id;
+
                 header('Location:meusdados.php');
                 exit();
             } else {
