@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 $id_usuario = $_SESSION['id_usuario'];
 // Verifica se o usuário está logado
 if (!isset($_SESSION['usuario'])) {
@@ -67,6 +68,9 @@ if (!empty($endereco_data)) {
     // Cria uma string com os dados do endereço
     $endereco_string = htmlspecialchars($cep . ', ' . $rua . ', ' . $bairro . ', ' . $cidade . ' - ' . $estado);
 }
+
+
+
 
 
 $carrinho = isset($_SESSION['carrinho']) ? $_SESSION['carrinho'] : [];
@@ -137,10 +141,10 @@ $total = isset($_SESSION['total']) ? $_SESSION['total'] : 0;
             <label for="endereco">Endereço:</label>
             <input type="radio" id="endereco" name="endereco" class="radio" value="<?=
                 $endereco_string;    
-            ?>" require>
-            <span><?= $endereco_string ?></span><br>
+            ?>" require checked>
+            <span><?= $endereco_string ?></span><br><br>
             <a href="#">+ Adicionar endereço</a>
-            <a href="#">- Remover endereço</a>
+            <a href="#" style="margin-left:5%">- Remover endereço</a>
         </div>
             <br><br>
             <p>Método de Pagamento:</p>    

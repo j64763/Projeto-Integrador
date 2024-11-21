@@ -70,25 +70,3 @@ function atualizarSubtotal() {
     // Atualiza o total final
     document.getElementById('total-compra').textContent = `total: R$ ${total.toFixed(2).replace('.', ',')}`;
 }
-
-function atualizarQuantidade(id, quantidade) {
-    const xhr = new XMLHttpRequest();
-    //xhr.open("POST", "carrinho.php", true);
-    //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.open("GET", "carrinho.php?q=" + quantidade);
-    xhr.send();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                const response = JSON.parse(xhr.responseText);
-                document.getElementById('subtotal').textContent = `subtotal R$ ${response.subtotal.toFixed(2).replace('.', ',')}`;
-                document.getElementById('total-compra').textContent = `total: R$ ${response.total.toFixed(2).replace('.', ',')}`;
-            } else {
-                console.error("Erro ao atualizar a quantidade.");
-            }
-        }
-    };
-
-    //xhr.send(`id=${id}&quantidade=${quantidade}`);
-}
-

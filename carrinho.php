@@ -3,6 +3,8 @@ session_start();
 
 
 
+
+
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_usuario'])) {
     header('Location: login.php?erro=1');
@@ -57,6 +59,17 @@ if (isset($_POST['id'])) {
 
 }
 
+if (isset($_POST['nova-quantidade'])) {
+    $novaQuantidade = $_POST['nova-quantidade'];
+    $id_item = $_POST['id'];
+    $pos = array_search($id, array_column($carrinho, 'id'));
+    if ($pos !== false) {
+        // Atualiza a quantidade se o item já existir
+        $carrinho[$pos]['quantidade'] = $novaQuantidade; 
+        $_SESSION['carrinho'] = $carrinho;
+}
+    }
+
 // Cálculo do subtotal e total
 foreach ($carrinho as $item) {
     $subtotal += $item['preco'] * $item['quantidade'];
@@ -66,6 +79,12 @@ $total = $subtotal + $frete;
     $_SESSION['subtotal'] = $subtotal;
     $_SESSION['frete'] = $frete;
     $_SESSION['total'] = $total;
+
+
+
+
+
+
 
 ?>
 
@@ -99,24 +118,44 @@ $total = $subtotal + $frete;
             <?php else: ?>
                 <p>pedido x detalhes</p>
                 <?php foreach ($carrinho as $i => $item): ?>
-                  
+
                     <li class="item">
         <div class="imagem-produto">
-            <img src="<?= $item['img'] ?>" alt="<?= $item['nome'] ?>">
+            <img id="imagem" src="<?= $item['img'] ?>" alt="<?= $item['nome'] ?>">
         </div>
         <div class="detalhes-produto">
-            <h4><?= $item['nome'] ?></h4>
+            
+            <h4 id="nome"><?= $item['nome'] ?></h4>
             <p class="preco-carrinho">R$ <?= number_format($item['preco'], 2, ',', '.') ?></p>
-            <button type="button" class="remover-unidade" onclick="remover(<?= $i ?>)">-</button>
-            <input type="number" id="quantidade" class="quantidade-<?= $i ?>" name="quantidade" min="1" max="100" value="<?= $item['quantidade'] ?>" required maxlength="3" onchange="atualizarQuantidade(<?= $item['id'] ?>, this.value)">            
-            <button type="button" class="adicionar-unidade" onclick="adicionar(<?= $i ?>)">+</button>
+            <form method="post" action="" style="display:inline;">
+
+            <input type="hidden" name="id" value="<?= $item['id'] ?>" id="id">
+            
+
+                   
+
+           
+
+            <input type="number" id="quantidade" class="quantidade-<?= $i ?>" name="nova-quantidade" min="1" max="100" 
+            value="<?= $item['quantidade'] ?>" required maxlength="3" >            
+            <button type="submit" class="adicionar-unidade" onclick="adicionar(<?= $i ?>)">+</button>
+            <button type="submit" class="remover-unidade" onclick="remover(<?= $i ?>)">-</button>
+
+            <!--<button name="atualizar" type="submit" class="atualizar" style="margin-left:20%"><i class="material-icons">autorenew</i></button>
+            <label for="atualizar">Atualizar</label>-->
+            </form>         
+      
             <form method="post" style="display:inline;">
                 <input type="hidden" name="remover_item" value="<?= $item['id'] ?>">
                 <button type="submit" class="remover-item"><i class="material-icons">delete</i></button>
             </form>
         </div>
     </li>
-<?php endforeach; ?>
+
+   
+    
+   
+    <?php endforeach; ?>
             <?php endif; ?>
         </div>
 
@@ -124,21 +163,26 @@ $total = $subtotal + $frete;
  
     <?php if (!empty($carrinho)): // Verifica se o carrinho não está vazio ?>
         <div class="total">
-            <p id="subtotal">subtotal R$ <?= number_format($subtotal, 2, ',', '.') ?></p>
-            <p id="desconto">descontos R$: 0,00</p>
-            <p id="frete">entrega R$ <?= $frete ?></p>
-            <p id="total-compra">total: R$ <?= number_format($total, 2, ',', '.') ?></p>
+            <p id="subtotal" name="subtotal">subtotal R$ <?= number_format($subtotal, 2, ',', '.') ?></p>
+            <p id="desconto" name="desconto">descontos R$: 0,00</p>
+            <p id="frete" name="frete">entrega R$ <?= $frete ?></p>
+            <p id="total-compra" name="total">total: R$ <?= number_format($total, 2, ',', '.') ?></p>
         </div>
+
+
         <div class="finalizar">
-            <button type="button" onclick="window.location.href='pagina-produtos.php'" onclick="atualizarQuantidade()">continuar comprando</button>
-            <button type="submit"  onclick="window.location.href='confirmar-endereco.php'">finalizar compra</button>
+            <button type="button" onclick="window.location.href='pagina-produtos.php'" onclick="atualizarQuantidade(<?= $item['id'] ?>)">continuar comprando</button>
+            
+            <button type="submit"  onclick="window.location.href='confirmar-endereco.php'" id="finalizar-compra">finalizar compra</button>
+   
         </div>
     <?php endif; ?>
-
+    
 
     <script src="js/atualiza_quantidade.js"></script>
-    <!-- <script language="javascript" src="js/total.js"></script> -->
-
+    <!--<script src="js/meu-jquery.js"></script>
+     
+    <script language="javascript" src="js/total.js"></script> -->
 
 </body>
 </html>

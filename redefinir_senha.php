@@ -99,8 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ss", $senha_hash, $id);
 
     if ($stmt->execute()) {
-        echo "Senha alterada com sucesso. <a href='firebrick-mosquito-536476.hostingersite.com
-/login.php'>Clique aqui para efetuar login.</a>";
+        echo "Senha alterada com sucesso. <a href='login.php'>Clique aqui para efetuar login.</a>";
     } else {
         echo "Erro ao atualizar a senha. Tente novamente mais tarde.";
     }

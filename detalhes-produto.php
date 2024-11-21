@@ -110,7 +110,6 @@
 		<button type="submit" id="comprar">COMPRAR</button>
 		<input name="id" type="hidden" value="<?= $id ?>"/>
 		<input name="nome" type="hidden" value="<?= $nome ?>"/>
-
 		<input name="preco" type="hidden" value="<?= $preco ?>"/>
 		
 	</form>
